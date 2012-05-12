@@ -1,0 +1,318 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.modthemod</groupId>
+	<artifactId>modthemodapi</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<!-- Description -->
+	<name>ModTheModAPI</name>
+	<url>http://thedevteam.org</url>
+	<description>${project.name} is the API for the ModTheMod modding system.</description>
+
+	<!-- Properties -->
+	<properties>
+		<project.blurb>Enhanced and Simplified Minecraft Modding</project.blurb>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<powermock.version>1.4.11</powermock.version>
+	</properties>
+
+	<!-- License -->
+	<licenses>
+		<license>
+			<name>Affero General Public License Version 3</name>
+			<url>http://www.gnu.org/licenses/agpl-3.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<!-- Source code -->
+	<scm>
+		<developerConnection>scm:git:git@github.com:simplyianm/${project.name}.git</developerConnection>
+		<connection>scm:git:git://github.com/simplyianm/${project.name}.git</connection>
+		<url>https://github.com/simplyianm/${project.name}</url>
+	</scm>
+
+	<!-- Issue Management -->
+	<issueManagement>
+		<system>github</system>
+		<url>http://github.com/simplyianm/${project.name}/issues</url>
+	</issueManagement>
+
+	<!-- Continuous integration -->
+	<ciManagement>
+		<system>travis-ci</system>
+		<url>http://travis-ci.org/#!/simplyianm/${project.name}</url>
+	</ciManagement>
+
+	<!-- Developers -->
+	<developers>
+		<developer>
+			<id>simplyianm</id>
+			<name>Ian Macalinao</name>
+			<email>ianmacalinao@gmail.com</email>
+			<url>http://simplyian.com/</url>
+			<organization>THEDevTeam</organization>
+			<organizationUrl>http://github.com/THEDevTeam</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>-6</timezone>
+		</developer>
+	</developers>
+
+	<!-- Repository locations -->
+	<repositories>
+		<repository>
+			<id>spout-repo</id>
+			<url>http://repo.spout.org</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spout-plugins</id>
+			<url>http://repo.spout.org</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>oss-sonatype-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<!-- Dependencies -->
+	<dependencies>
+		<!-- Compile -->
+
+		<!-- Test -->
+		<!-- JUnit - Unit Testing -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-junit4</artifactId>
+			<version>${powermock.version}</version>
+			<scope>test</scope>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-mockito</artifactId>
+			<version>${powermock.version}</version>
+			<scope>test</scope>
+			<type>jar</type>
+		</dependency>
+	</dependencies>
+
+	<!-- Build -->
+	<build>
+		<defaultGoal>clean install</defaultGoal>
+		<sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+
+		<!-- Resources -->
+		<resources>
+			<resource>
+				<targetPath>.</targetPath>
+				<filtering>false</filtering>
+				<directory>${basedir}</directory>
+				<includes>
+					<include>LICENSE.txt</include>
+				</includes>
+			</resource>
+			<resource>
+				<targetPath>.</targetPath>
+				<filtering>true</filtering>
+				<directory>${basedir}/src/main/resources</directory>
+				<includes>
+					<include>spoutplugin.yml</include>
+				</includes>
+			</resource>
+		</resources>
+
+		<!-- Plugins -->
+		<plugins>
+			<!-- Git description plugin -->
+			<plugin>
+				<groupId>com.lukegb.mojo</groupId>
+				<artifactId>gitdescribe-maven-plugin</artifactId>
+				<version>1.3</version>
+				<configuration>
+					<outputPrefix>git-${project.name}-</outputPrefix>
+					<outputPostfix></outputPostfix>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>gitdescribe</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Compile plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<!-- JAR creation plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<Implementation-Title>${project.name}</Implementation-Title>
+							<Implementation-Version>${describe}</Implementation-Version>
+							<Implementation-Vendor>THEDevTeam</Implementation-Vendor>
+							<Specification-Title>ModTheMod</Specification-Title>
+							<Specification-Version>${project.version}</Specification-Version>
+							<Specification-Vendor>THEDevTeam</Specification-Vendor>
+							<Sealed>true</Sealed>
+						</manifestEntries>
+						<manifestSections>
+							<manifestSection>
+								<name>org/thedevteam/modthemod/</name>
+								<manifestEntries>
+									<Sealed>true</Sealed>
+								</manifestEntries>
+							</manifestSection>
+						</manifestSections>
+					</archive>
+				</configuration>
+			</plugin>
+			<!-- Uber JAR creation -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<artifactSet>
+								<includes>
+									<include>rhino:js</include>
+								</includes>
+							</artifactSet>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Site -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<reportPlugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-project-info-reports-plugin</artifactId>
+							<version>2.4</version>
+							<configuration>
+								<dependencyDetailsEnabled>true</dependencyDetailsEnabled>
+								<dependencyLocationsEnabled>true</dependencyLocationsEnabled>
+							</configuration>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-checkstyle-plugin</artifactId>
+							<version>2.7</version>
+							<configuration>
+								<configLocation>config/sun_checks.xml</configLocation>
+							</configuration>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-javadoc-plugin</artifactId>
+							<version>2.8.1</version>
+							<configuration>
+								<linksource>true</linksource>
+							</configuration>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-jxr-plugin</artifactId>
+							<version>2.3</version>
+						</plugin>
+						<plugin>
+							<groupId>org.codehaus.mojo</groupId>
+							<artifactId>versions-maven-plugin</artifactId>
+							<version>1.2</version>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-pmd-plugin</artifactId>
+							<version>2.6</version>
+							<configuration>
+								<linkXref>true</linkXref>
+								<sourceEncoding>utf-8</sourceEncoding>
+								<minimumTokens>100</minimumTokens>
+								<targetJdk>1.6</targetJdk>
+								<excludeRoots>
+									<excludeRoot>target/generated-sources/stubs</excludeRoot>
+								</excludeRoots>
+							</configuration>
+						</plugin>
+					</reportPlugins>
+				</configuration>
+			</plugin>
+			<!-- Github Maven core plugin -->
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>github-maven-core</artifactId>
+				<version>0.4-SNAPSHOT</version>
+			</plugin>
+			<!-- Github downloads -->
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>downloads-maven-plugin</artifactId>
+				<version>0.4</version>
+				<configuration>
+					<description>Version ${project.version} of ${project.name}</description>
+					<override>true</override>
+					<includeAttached>true</includeAttached>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>upload</goal>
+						</goals>
+						<phase>release</phase>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Github site -->
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.5</version>
+				<configuration>
+					<message>Committing site of ${project.version}.</message>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>site</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
