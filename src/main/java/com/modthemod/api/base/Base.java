@@ -8,26 +8,40 @@ import com.modthemod.api.event.EventType;
 
 /**
  * Represents a base of an {@link Entity}.
+ * 
+ * <p>
+ * Bases are immutable. The only thing that is "changed" with bases are the
+ * event listeners, which can be added or removed at will.
+ * </p>
  */
 public class Base {
 	/**
 	 * The name of the base.
 	 */
-	private String name;
+	private final String name;
 
 	/**
 	 * The Map containing the properties of the base. Immutable.
 	 */
-	private Map<String, Property> properties;
+	private final Map<String, Property> properties;
 
 	/**
 	 * Creates a new {@link Base} with the given name.
 	 * 
+	 * <p>
+	 * Please do not use this constructor.
+	 * 
+	 * Instead, use {@link BaseBuilder#build}.
+	 * </p>
+	 * 
 	 * @param name
 	 *            The name of the {@link Base}.
+	 * @param properties
+	 *            The properties of the {@link Base}.
 	 */
-	public Base(String name) {
+	Base(String name, Map<String, Property> properties) {
 		this.name = name;
+		this.properties = properties;
 	}
 
 	/**
@@ -37,18 +51,6 @@ public class Base {
 	 */
 	public String getName() {
 		return this.name;
-	}
-
-	/**
-	 * Adds a property of the base.
-	 * 
-	 * @param name
-	 *            The name of the property.
-	 * @param value
-	 *            The value of the propery.
-	 */
-	public void addProperty(String name, Property value) {
-		properties.put(name, value);
 	}
 
 	/**
