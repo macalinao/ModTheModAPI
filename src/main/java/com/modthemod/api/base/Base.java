@@ -117,6 +117,15 @@ public class Base {
 	}
 
 	/**
+	 * Gets the {@link Instantiator} of the {@link Base}.
+	 * 
+	 * @return The {@link Instantiator} of the {@link Base}.
+	 */
+	public Instantiator getInstantiator() {
+		return instantiator;
+	}
+
+	/**
 	 * Creates a new {@link BaseBuilder} based on this {@link Base}.
 	 * 
 	 * @return A new {@link BaseBuilder} based on this {@link Base}.

@@ -4,6 +4,7 @@ import com.modthemod.api.base.Base;
 import com.modthemod.api.entity.EntityManager;
 import com.modthemod.api.event.EventManager;
 import com.modthemod.api.event.EventType;
+import com.modthemod.api.platform.Platform;
 
 /**
  * Represents the core Game.
@@ -12,9 +13,9 @@ public interface Game {
 	/**
 	 * Gets the platform the game is running on.
 	 * 
-	 * @return The name of the platform.
+	 * @return The {@link Platform} of the game.
 	 */
-	public String getPlatform();
+	public Platform getPlatform();
 
 	/**
 	 * Registers a {@link Base} with the game.
