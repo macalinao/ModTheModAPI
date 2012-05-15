@@ -1,8 +1,10 @@
 package com.modthemod.api.base;
 
-import java.util.Map;
+import java.util.HashMap;
 
 import com.modthemod.api.ModTheMod;
+import com.modthemod.api.entity.Entity;
+import com.modthemod.api.entity.SimpleEntity;
 import com.modthemod.api.event.EventListener;
 import com.modthemod.api.event.EventType;
 
@@ -23,10 +25,15 @@ public class Base {
 	/**
 	 * The Map containing the properties of the base. Immutable.
 	 */
-	private final Map<String, Property> properties;
+	private final HashMap<String, Property> properties;
 
 	/**
-	 * Creates a new {@link Base} with the given name.
+	 * The {@link Initiator} that runs on entities when they are created.
+	 */
+	private Initiator initiator;
+
+	/**
+	 * Creates a new {@link Base}.
 	 * 
 	 * <p>
 	 * Please do not use this constructor.
@@ -39,9 +46,10 @@ public class Base {
 	 * @param properties
 	 *            The properties of the {@link Base}.
 	 */
-	Base(String name, Map<String, Property> properties) {
+	Base(String name, HashMap<String, Property> properties, Initiator initiator) {
 		this.name = name;
 		this.properties = properties;
+		this.initiator = initiator;
 	}
 
 	/**
@@ -62,6 +70,17 @@ public class Base {
 	 */
 	public Property getProperty(String name) {
 		return properties.get(name);
+	}
+
+	/**
+	 * Gets a cloned {@link HashMap} of the properties of this {@link Base}.
+	 * 
+	 * @return A cloned {@link HashMap} of the properties of this {@link Base}.
+	 */
+	@SuppressWarnings("unchecked")
+	public HashMap<String, Property> getProperties() {
+		// TODO Deep-clone properties...?
+		return (HashMap<String, Property>) properties.clone();
 	}
 
 	/**
@@ -94,5 +113,23 @@ public class Base {
 	 */
 	public void addEventListener(EventType eventType, EventListener listener) {
 		eventType.addListener(listener);
+	}
+
+	/**
+	 * Creates a new {@link BaseBuilder} based on this {@link Base}.
+	 * 
+	 * @return A new {@link BaseBuilder} based on this {@link Base}.
+	 */
+	public BaseBuilder extend() {
+		return new BaseBuilder(this);
+	}
+
+	/**
+	 * Spawns a new {@link Entity} based on this {@link Base}.
+	 * 
+	 * @return A new {@link Entity} derived from this {@link Base}.
+	 */
+	public Entity spawn() {
+		return new SimpleEntity(this);
 	}
 }

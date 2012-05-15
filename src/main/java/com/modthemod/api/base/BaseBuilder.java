@@ -15,6 +15,11 @@ public class BaseBuilder {
 	private HashMap<String, Property> properties;
 
 	/**
+	 * The {@link Initiator} of new entities.
+	 */
+	private Initiator initiator;
+
+	/**
 	 * Creates a new {@link BaseBuilder} with the given name.
 	 * 
 	 * @param name
@@ -22,6 +27,17 @@ public class BaseBuilder {
 	public BaseBuilder(String name) {
 		this.name = name;
 		this.properties = new HashMap<String, Property>();
+	}
+
+	/**
+	 * Creates a new {@link BaseBuilder} based on the given {@link Base}.
+	 * 
+	 * @param base
+	 *            The {@link Base}
+	 */
+	public BaseBuilder(Base base) {
+		this.name = base.getName();
+		this.properties = base.getProperties();
 	}
 
 	/**
@@ -48,12 +64,26 @@ public class BaseBuilder {
 	}
 
 	/**
+	 * Sets the {@link Initiator} of the base.
+	 * 
+	 * @param initiator
+	 *            The {@lnk Initiator} of the base.
+	 */
+	public void setInitiator(Initiator initiator) {
+		this.initiator = initiator;
+	}
+
+	/**
 	 * Builds a new {@link Base} from the {@link BaseBuilder}.
 	 * 
 	 * @return A new {@link Base}.
 	 */
 	@SuppressWarnings("unchecked")
 	public Base build() {
-		return new Base(name, ((HashMap<String, Property>) properties.clone()));
+		if (initiator == null) {
+			initiator = new EmptyInitiator();
+		}
+		return new Base(name, (HashMap<String, Property>) properties.clone(),
+				initiator);
 	}
 }
