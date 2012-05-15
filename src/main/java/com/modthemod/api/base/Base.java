@@ -28,9 +28,9 @@ public class Base {
 	private final HashMap<String, Property> properties;
 
 	/**
-	 * The {@link Initiator} that runs on entities when they are created.
+	 * The {@link Instantiator} that runs on entities when they are created.
 	 */
-	private Initiator initiator;
+	private Instantiator instantiator;
 
 	/**
 	 * Creates a new {@link Base}.
@@ -46,10 +46,11 @@ public class Base {
 	 * @param properties
 	 *            The properties of the {@link Base}.
 	 */
-	Base(String name, HashMap<String, Property> properties, Initiator initiator) {
+	Base(String name, HashMap<String, Property> properties,
+			Instantiator initiator) {
 		this.name = name;
 		this.properties = properties;
-		this.initiator = initiator;
+		this.instantiator = initiator;
 	}
 
 	/**
@@ -125,11 +126,24 @@ public class Base {
 	}
 
 	/**
-	 * Spawns a new {@link Entity} based on this {@link Base}.
+	 * Instantiates a new {@link Entity} based on this {@link Base}.
 	 * 
 	 * @return A new {@link Entity} derived from this {@link Base}.
 	 */
-	public Entity spawn() {
-		return new SimpleEntity(this);
+	public Entity instantiate() {
+		return instantiate(new Object());
 	}
+
+	/**
+	 * Instantiates a new {@link Entity} based on this {@link Base}.
+	 * 
+	 * @param args
+	 *            The arguments to instantiate the {@link Entity} with.
+	 * @return A new {@link Entity} derived from this {@link Base}.
+	 */
+	public Entity instantiate(Object... args) {
+		return ModTheMod.getGame().getEntityManager()
+				.instantiateEntity(this, args);
+	}
+
 }

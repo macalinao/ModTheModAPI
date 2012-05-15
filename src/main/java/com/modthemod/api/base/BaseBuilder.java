@@ -15,9 +15,9 @@ public class BaseBuilder {
 	private HashMap<String, Property> properties;
 
 	/**
-	 * The {@link Initiator} of new entities.
+	 * The {@link Instantiator} of new entities.
 	 */
-	private Initiator initiator;
+	private Instantiator instantiator;
 
 	/**
 	 * Creates a new {@link BaseBuilder} with the given name.
@@ -64,13 +64,13 @@ public class BaseBuilder {
 	}
 
 	/**
-	 * Sets the {@link Initiator} of the base.
+	 * Sets the {@link Instantiator} of the base.
 	 * 
-	 * @param initiator
-	 *            The {@lnk Initiator} of the base.
+	 * @param instantiator
+	 *            The {@link Instantiator} of the base.
 	 */
-	public void setInitiator(Initiator initiator) {
-		this.initiator = initiator;
+	public void setInstantiator(Instantiator instantiator) {
+		this.instantiator = instantiator;
 	}
 
 	/**
@@ -80,10 +80,10 @@ public class BaseBuilder {
 	 */
 	@SuppressWarnings("unchecked")
 	public Base build() {
-		if (initiator == null) {
-			initiator = new EmptyInitiator();
+		if (instantiator == null) {
+			throw new IllegalStateException("No instantiator set!");
 		}
 		return new Base(name, (HashMap<String, Property>) properties.clone(),
-				initiator);
+				instantiator);
 	}
 }

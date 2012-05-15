@@ -1,6 +1,7 @@
 package com.modthemod.api;
 
 import com.modthemod.api.base.Base;
+import com.modthemod.api.entity.EntityManager;
 import com.modthemod.api.event.EventManager;
 import com.modthemod.api.event.EventType;
 
@@ -30,6 +31,13 @@ public interface Game {
 	 *            The {@link EventType} to register.
 	 */
 	public void registerEvent(EventType event);
+
+	/**
+	 * Gets the {@link EntityManager} of the game.
+	 * 
+	 * @return The {@link EntityManager} of the game.
+	 */
+	public EntityManager getEntityManager();
 
 	/**
 	 * Gets the {@link EventManager} of the game.
