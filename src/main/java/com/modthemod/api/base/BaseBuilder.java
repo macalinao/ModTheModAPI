@@ -48,10 +48,12 @@ public class BaseBuilder {
 	 * @param name
 	 *            The name of the property.
 	 * @param value
-	 *            The value of the propery.
+	 *            The value of the property.
+	 * @return this
 	 */
-	public void setProperty(String name, Property value) {
+	public BaseBuilder setProperty(String name, Property value) {
 		properties.put(name, value);
+		return this;
 	}
 
 	/**
@@ -70,9 +72,11 @@ public class BaseBuilder {
 	 * 
 	 * @param instantiator
 	 *            The {@link Instantiator} of the base.
+	 * @return this
 	 */
-	public void setInstantiator(Instantiator instantiator) {
+	public BaseBuilder setInstantiator(Instantiator instantiator) {
 		this.instantiator = instantiator;
+		return this;
 	}
 
 	/**
