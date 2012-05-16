@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.modthemod.api.base.Base;
-import com.modthemod.api.base.Property;
+import com.modthemod.api.property.Property;
 
 /**
  * Represents an entity that acts as a POJO.

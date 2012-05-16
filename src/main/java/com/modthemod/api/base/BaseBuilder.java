@@ -3,6 +3,8 @@ package com.modthemod.api.base;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.modthemod.api.property.Property;
+
 public class BaseBuilder {
 	/**
 	 * The name of the base.

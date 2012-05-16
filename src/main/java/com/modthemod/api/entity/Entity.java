@@ -3,7 +3,7 @@ package com.modthemod.api.entity;
 import java.util.Map;
 
 import com.modthemod.api.base.Base;
-import com.modthemod.api.base.Property;
+import com.modthemod.api.property.Property;
 
 /**
  * Represents an {@link Entity}, or a tangible object in-game.

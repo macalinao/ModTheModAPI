@@ -7,6 +7,7 @@ import com.modthemod.api.entity.Entity;
 import com.modthemod.api.entity.SimpleEntity;
 import com.modthemod.api.event.EventListener;
 import com.modthemod.api.event.EventType;
+import com.modthemod.api.property.Property;
 
 /**
  * Represents a base of an {@link Entity}.
