@@ -1,4 +1,4 @@
-ModTheModAPI ![Build Status](https://secure.travis-ci.org/THEDevTeam/ModTheModAPI.png?branch=master)
+ModTheModAPI ![Build Status](https://secure.travis-ci.org/simplyianm/ModTheModAPI.png?branch=master)
 ============
 
 Introduction
