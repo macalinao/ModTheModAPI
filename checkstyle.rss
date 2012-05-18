@@ -8,8 +8,8 @@
     <language>en-us</language>
     <copyright>&#169;2012</copyright>
     <item>
-      <title>File: 24,
-             Errors: 593,
+      <title>File: 18,
+             Errors: 583,
              Warnings: 0,
              Infos: 0
       </title>
@@ -66,21 +66,7 @@
                   0
                 </td>
                 <td>
-                  162
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.property.primitive.Primitive.java">com/modthemod/api/property/primitive/Primitive.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  18
+                  171
                 </td>
               </tr>
                           <tr>
@@ -113,48 +99,6 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.property.Property.java">com/modthemod/api/property/Property.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  9
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.property.primitive.Function.java">com/modthemod/api/property/primitive/Function.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  5
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.property.primitive.Numeric.java">com/modthemod/api/property/primitive/Numeric.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  5
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.event.Event.java">com/modthemod/api/event/Event.java</a>
                 </td>
                 <td>
@@ -165,6 +109,20 @@
                 </td>
                 <td>
                   9
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.property.Property.java">com/modthemod/api/property/Property.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  40
                 </td>
               </tr>
                           <tr>
@@ -207,20 +165,6 @@
                 </td>
                 <td>
                   9
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.property.primitive.Text.java">com/modthemod/api/property/primitive/Text.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  5
                 </td>
               </tr>
                           <tr>
@@ -281,7 +225,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.property.primitive.Model.java">com/modthemod/api/property/primitive/Model.java</a>
+                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.property.Type.java">com/modthemod/api/property/Type.java</a>
                 </td>
                 <td>
                   0
@@ -290,35 +234,7 @@
                   0
                 </td>
                 <td>
-                  12
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.property.primitive.Texture.java">com/modthemod/api/property/primitive/Texture.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  12
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.property.primitive.Flag.java">com/modthemod/api/property/primitive/Flag.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  5
+                  13
                 </td>
               </tr>
                           <tr>
@@ -332,7 +248,7 @@
                   0
                 </td>
                 <td>
-                  21
+                  20
                 </td>
               </tr>
                           <tr>

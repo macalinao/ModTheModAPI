@@ -5,5 +5,4 @@ com.modthemod.api.event
 com.modthemod.api.mod
 com.modthemod.api.platform
 com.modthemod.api.property
-com.modthemod.api.property.primitive
 com.modthemod.api.util

@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2012-05-17T22:02:49.102">
-<file name="/home/simplyianm/Desktop/modthemod/modthemodapi/src/main/java/com/modthemod/api/base/Base.java">
-<violation beginline="7" endline="7" begincolumn="1" endcolumn="45" rule="UnusedImports" ruleset="Import Statement Rules" package="com.modthemod.api.base" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
-Avoid unused imports such as 'com.modthemod.api.entity.SimpleEntity'
-</violation>
-</file>
-<file name="/home/simplyianm/Desktop/modthemod/modthemodapi/src/main/java/com/modthemod/api/base/BaseBuilder.java">
-<violation beginline="4" endline="4" begincolumn="1" endcolumn="21" rule="UnusedImports" ruleset="Import Statement Rules" package="com.modthemod.api.base" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
-Avoid unused imports such as 'java.util.Map'
-</violation>
-</file>
+<pmd version="4.2.5" timestamp="2012-05-18T07:49:34.247">
 <file name="/home/simplyianm/Desktop/modthemod/modthemodapi/src/main/java/com/modthemod/api/entity/Entity.java">
 <violation beginline="3" endline="3" begincolumn="1" endcolumn="21" rule="UnusedImports" ruleset="Import Statement Rules" package="com.modthemod.api.entity" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
 Avoid unused imports such as 'java.util.Map'

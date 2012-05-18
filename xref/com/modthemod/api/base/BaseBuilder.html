@@ -11,9 +11,9 @@
 <a class="jxr_linenumber" name="1" href="#1">1</a>   <strong class="jxr_keyword">package</strong> com.modthemod.api.base;
 <a class="jxr_linenumber" name="2" href="#2">2</a>   
 <a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> java.util.HashMap;
-<a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> java.util.Map;
-<a class="jxr_linenumber" name="5" href="#5">5</a>   
-<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> com.modthemod.api.property.Property;
+<a class="jxr_linenumber" name="4" href="#4">4</a>   
+<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> com.modthemod.api.property.Property;
+<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> com.modthemod.api.property.Type;
 <a class="jxr_linenumber" name="7" href="#7">7</a>   
 <a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../com/modthemod/api/base/BaseBuilder.html">BaseBuilder</a> {
 <a class="jxr_linenumber" name="9" href="#9">9</a>   	<em class="jxr_javadoccomment">/**</em>
@@ -24,7 +24,7 @@
 <a class="jxr_linenumber" name="14" href="#14">14</a>  	<em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="15" href="#15">15</a>  <em class="jxr_javadoccomment">	 * The Map containing the properties of the base.</em>
 <a class="jxr_linenumber" name="16" href="#16">16</a>  <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="17" href="#17">17</a>  	<strong class="jxr_keyword">private</strong> HashMap&lt;String, Property&gt; properties;
+<a class="jxr_linenumber" name="17" href="#17">17</a>  	<strong class="jxr_keyword">private</strong> HashMap&lt;String, Property&lt;?&gt;&gt; properties;
 <a class="jxr_linenumber" name="18" href="#18">18</a>  
 <a class="jxr_linenumber" name="19" href="#19">19</a>  	<em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="20" href="#20">20</a>  <em class="jxr_javadoccomment">	 * The {@link Instantiator} of new entities.</em>
@@ -38,7 +38,7 @@
 <a class="jxr_linenumber" name="28" href="#28">28</a>  <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="29" href="#29">29</a>  	<strong class="jxr_keyword">public</strong> <a href="../../../../com/modthemod/api/base/BaseBuilder.html">BaseBuilder</a>(String name) {
 <a class="jxr_linenumber" name="30" href="#30">30</a>  		<strong class="jxr_keyword">this</strong>.name = name;
-<a class="jxr_linenumber" name="31" href="#31">31</a>  		<strong class="jxr_keyword">this</strong>.properties = <strong class="jxr_keyword">new</strong> HashMap&lt;String, Property&gt;();
+<a class="jxr_linenumber" name="31" href="#31">31</a>  		<strong class="jxr_keyword">this</strong>.properties = <strong class="jxr_keyword">new</strong> HashMap&lt;String, Property&lt;?&gt;&gt;();
 <a class="jxr_linenumber" name="32" href="#32">32</a>  	}
 <a class="jxr_linenumber" name="33" href="#33">33</a>  
 <a class="jxr_linenumber" name="34" href="#34">34</a>  	<em class="jxr_javadoccomment">/**</em>
@@ -61,7 +61,7 @@
 <a class="jxr_linenumber" name="51" href="#51">51</a>  <em class="jxr_javadoccomment">	 *            The value of the property.</em>
 <a class="jxr_linenumber" name="52" href="#52">52</a>  <em class="jxr_javadoccomment">	 * @return this</em>
 <a class="jxr_linenumber" name="53" href="#53">53</a>  <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="54" href="#54">54</a>  	<strong class="jxr_keyword">public</strong> <a href="../../../../com/modthemod/api/base/BaseBuilder.html">BaseBuilder</a> setProperty(String name, <a href="../../../../com/modthemod/api/property/Property.html">Property</a> value) {
+<a class="jxr_linenumber" name="54" href="#54">54</a>  	<strong class="jxr_keyword">public</strong> <a href="../../../../com/modthemod/api/base/BaseBuilder.html">BaseBuilder</a> setProperty(String name, Property&lt;?&gt; value) {
 <a class="jxr_linenumber" name="55" href="#55">55</a>  		properties.put(name, value);
 <a class="jxr_linenumber" name="56" href="#56">56</a>  		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="57" href="#57">57</a>  	}
@@ -71,9 +71,9 @@
 <a class="jxr_linenumber" name="61" href="#61">61</a>  <em class="jxr_javadoccomment">	 * </em>
 <a class="jxr_linenumber" name="62" href="#62">62</a>  <em class="jxr_javadoccomment">	 * @param name</em>
 <a class="jxr_linenumber" name="63" href="#63">63</a>  <em class="jxr_javadoccomment">	 *            The name of the property.</em>
-<a class="jxr_linenumber" name="64" href="#64">64</a>  <em class="jxr_javadoccomment">	 * @return The {@link Property}.</em>
+<a class="jxr_linenumber" name="64" href="#64">64</a>  <em class="jxr_javadoccomment">	 * @return The {@link Type}.</em>
 <a class="jxr_linenumber" name="65" href="#65">65</a>  <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="66" href="#66">66</a>  	<strong class="jxr_keyword">public</strong> <a href="../../../../com/modthemod/api/property/Property.html">Property</a> getProperty(String name) {
+<a class="jxr_linenumber" name="66" href="#66">66</a>  	<strong class="jxr_keyword">public</strong> Property&lt;?&gt; getProperty(String name) {
 <a class="jxr_linenumber" name="67" href="#67">67</a>  		<strong class="jxr_keyword">return</strong> properties.get(name);
 <a class="jxr_linenumber" name="68" href="#68">68</a>  	}
 <a class="jxr_linenumber" name="69" href="#69">69</a>  
@@ -99,7 +99,7 @@
 <a class="jxr_linenumber" name="89" href="#89">89</a>  		<strong class="jxr_keyword">if</strong> (instantiator == <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="90" href="#90">90</a>  			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalStateException(<span class="jxr_string">"No instantiator set!"</span>);
 <a class="jxr_linenumber" name="91" href="#91">91</a>  		}
-<a class="jxr_linenumber" name="92" href="#92">92</a>  		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../com/modthemod/api/base/Base.html">Base</a>(name, (HashMap&lt;String, Property&gt;) properties.clone(),
+<a class="jxr_linenumber" name="92" href="#92">92</a>  		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../com/modthemod/api/base/Base.html">Base</a>(name, (HashMap&lt;String, Property&lt;?&gt;&gt;) properties.clone(),
 <a class="jxr_linenumber" name="93" href="#93">93</a>  				instantiator);
 <a class="jxr_linenumber" name="94" href="#94">94</a>  	}
 <a class="jxr_linenumber" name="95" href="#95">95</a>  }
