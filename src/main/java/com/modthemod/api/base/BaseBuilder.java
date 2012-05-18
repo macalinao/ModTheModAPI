@@ -1,9 +1,9 @@
 package com.modthemod.api.base;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import com.modthemod.api.property.Property;
+import com.modthemod.api.property.Type;
 
 public class BaseBuilder {
 	/**
@@ -14,7 +14,7 @@ public class BaseBuilder {
 	/**
 	 * The Map containing the properties of the base.
 	 */
-	private HashMap<String, Property> properties;
+	private HashMap<String, Property<?>> properties;
 
 	/**
 	 * The {@link Instantiator} of new entities.
@@ -28,7 +28,7 @@ public class BaseBuilder {
 	 */
 	public BaseBuilder(String name) {
 		this.name = name;
-		this.properties = new HashMap<String, Property>();
+		this.properties = new HashMap<String, Property<?>>();
 	}
 
 	/**
@@ -51,7 +51,7 @@ public class BaseBuilder {
 	 *            The value of the property.
 	 * @return this
 	 */
-	public BaseBuilder setProperty(String name, Property value) {
+	public BaseBuilder setProperty(String name, Property<?> value) {
 		properties.put(name, value);
 		return this;
 	}
@@ -61,9 +61,9 @@ public class BaseBuilder {
 	 * 
 	 * @param name
 	 *            The name of the property.
-	 * @return The {@link Property}.
+	 * @return The {@link Type}.
 	 */
-	public Property getProperty(String name) {
+	public Property<?> getProperty(String name) {
 		return properties.get(name);
 	}
 
@@ -89,7 +89,7 @@ public class BaseBuilder {
 		if (instantiator == null) {
 			throw new IllegalStateException("No instantiator set!");
 		}
-		return new Base(name, (HashMap<String, Property>) properties.clone(),
+		return new Base(name, (HashMap<String, Property<?>>) properties.clone(),
 				instantiator);
 	}
 }

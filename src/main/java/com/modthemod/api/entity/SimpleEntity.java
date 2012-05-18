@@ -4,25 +4,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.modthemod.api.base.Base;
-import com.modthemod.api.property.Property;
+import com.modthemod.api.property.Type;
 
 /**
  * Represents an entity that acts as a POJO.
  */
 public class SimpleEntity extends Entity {
-	private Map<String, Property> properties = new HashMap<String, Property>();
+	private Map<String, Type> properties = new HashMap<String, Type>();
 
 	public SimpleEntity(Base base) {
 		super(base);
 	}
 
 	@Override
-	public Property getProperty(String name) {
+	public Type getProperty(String name) {
 		return properties.get(name);
 	}
 
 	@Override
-	public void setProperty(String name, Property value) {
+	public void setProperty(String name, Type value) {
 		properties.put(name, value);
 	}
 

@@ -1,13 +1,46 @@
 package com.modthemod.api.property;
 
+import java.io.Serializable;
+
 /**
- * Represents a property, or something that has a value.
+ * Represents a cloneable property containing data.
+ * 
+ * @param <T>
  */
-public interface Property {
+public final class Property<T> implements Serializable, Cloneable {
 	/**
-	 * Gets the value of this {@link Property}.
-	 * 
-	 * @return The value of this {@link Property}.
+	 * Serial version UID.
 	 */
-	public Object getValue();
+	private static final long serialVersionUID = 8452618201182051007L;
+
+	/**
+	 * The {@link Type} of the {@link Property}.
+	 */
+	public Type<T> type;
+
+	/**
+	 * The value of the {@link Property}.
+	 */
+	public T value;
+
+	/**
+	 * Constructor for a property.
+	 * 
+	 * @param value
+	 *            The value of the {@link Property}.
+	 */
+	public Property(T value) {
+		this.value = value;
+	}
+
+	/**
+	 * Returns true if the {@link Property} is of the given {@link Type}.
+	 * 
+	 * @param other
+	 *            The other {@link Type} to check against.
+	 * @return True if the {@link Property} is of the given {@link Type}.
+	 */
+	public boolean is(Type<?> other) {
+		return type.is(other);
+	}
 }

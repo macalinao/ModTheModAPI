@@ -1,13 +1,14 @@
 package com.modthemod.api.base;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 import com.modthemod.api.ModTheMod;
 import com.modthemod.api.entity.Entity;
-import com.modthemod.api.entity.SimpleEntity;
 import com.modthemod.api.event.EventListener;
 import com.modthemod.api.event.EventType;
 import com.modthemod.api.property.Property;
+import com.modthemod.api.property.Type;
 
 /**
  * Represents a base of an {@link Entity}.
@@ -17,7 +18,12 @@ import com.modthemod.api.property.Property;
  * event listeners, which can be added or removed at will.
  * </p>
  */
-public class Base {
+public class Base implements Type<Base>, Serializable, Cloneable {
+	/**
+	 * Serial version UID.
+	 */
+	private static final long serialVersionUID = -6874978692908808758L;
+
 	/**
 	 * The name of the base.
 	 */
@@ -26,7 +32,7 @@ public class Base {
 	/**
 	 * The Map containing the properties of the base. Immutable.
 	 */
-	private final HashMap<String, Property> properties;
+	private final HashMap<String, Property<?>> properties;
 
 	/**
 	 * The {@link Instantiator} that runs on entities when they are created.
@@ -47,7 +53,7 @@ public class Base {
 	 * @param properties
 	 *            The properties of the {@link Base}.
 	 */
-	Base(String name, HashMap<String, Property> properties,
+	Base(String name, HashMap<String, Property<?>> properties,
 			Instantiator initiator) {
 		this.name = name;
 		this.properties = properties;
@@ -68,9 +74,9 @@ public class Base {
 	 * 
 	 * @param name
 	 *            The name of the property.
-	 * @return The {@link Property}.
+	 * @return The {@link Type}.
 	 */
-	public Property getProperty(String name) {
+	public Property<?> getProperty(String name) {
 		return properties.get(name);
 	}
 
@@ -80,9 +86,9 @@ public class Base {
 	 * @return A cloned {@link HashMap} of the properties of this {@link Base}.
 	 */
 	@SuppressWarnings("unchecked")
-	public HashMap<String, Property> getProperties() {
+	public HashMap<String, Property<?>> getProperties() {
 		// TODO Deep-clone properties...?
-		return (HashMap<String, Property>) properties.clone();
+		return (HashMap<String, Property<?>>) properties.clone();
 	}
 
 	/**
@@ -154,6 +160,11 @@ public class Base {
 	public Entity instantiate(Object... args) {
 		return ModTheMod.getGame().getEntityManager()
 				.instantiateEntity(this, args);
+	}
+
+	@Override
+	public boolean is(Type<?> other) {
+		return other.equals(this); // TODO make Type different
 	}
 
 }

@@ -3,7 +3,7 @@ package com.modthemod.api.entity;
 import java.util.Map;
 
 import com.modthemod.api.base.Base;
-import com.modthemod.api.property.Property;
+import com.modthemod.api.property.Type;
 
 /**
  * Represents an {@link Entity}, or a tangible object in-game.
@@ -33,9 +33,9 @@ public abstract class Entity {
 	 * 
 	 * @param name
 	 *            The name of the property.
-	 * @return The value of the property as a {@link Property}.
+	 * @return The value of the property as a {@link Type}.
 	 */
-	public abstract Property getProperty(String name);
+	public abstract Type getProperty(String name);
 
 	/**
 	 * Sets the value of a property from its name.
@@ -43,7 +43,7 @@ public abstract class Entity {
 	 * @param name
 	 *            The name of the property.
 	 * @param value
-	 *            The value of the property as a {@link Property}.
+	 *            The value of the property as a {@link Type}.
 	 */
-	public abstract void setProperty(String name, Property value);
+	public abstract void setProperty(String name, Type value);
 }
