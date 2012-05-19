@@ -138,7 +138,7 @@ public class Base extends Type<Entity> implements Serializable, Cloneable {
 	 * @return A new {@link BaseBuilder} based on this {@link Base}.
 	 */
 	public BaseBuilder extend() {
-		return new BaseBuilder(this);
+		return new BaseBuilder(this); // TODO think about how this will work
 	}
 
 	/**
