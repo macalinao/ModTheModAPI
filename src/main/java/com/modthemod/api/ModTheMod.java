@@ -1,6 +1,6 @@
 package com.modthemod.api;
 
-public class ModTheMod {
+public final class ModTheMod {
 	/**
 	 * The {@link Game} instance.
 	 */

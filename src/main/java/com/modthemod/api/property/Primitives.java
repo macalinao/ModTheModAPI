@@ -3,7 +3,7 @@ package com.modthemod.api.property;
 /**
  * Container class for well-used {@link Primitive} objects.
  */
-public class Primitives {
+public final class Primitives {
 	/**
 	 * The string {@link Primitive}.
 	 */

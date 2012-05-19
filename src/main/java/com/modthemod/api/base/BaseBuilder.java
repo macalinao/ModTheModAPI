@@ -5,7 +5,7 @@ import java.util.HashMap;
 import com.modthemod.api.property.Property;
 import com.modthemod.api.property.Type;
 
-public class BaseBuilder {
+public final class BaseBuilder {
 	/**
 	 * The name of the base.
 	 */

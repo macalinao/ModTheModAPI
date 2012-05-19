@@ -18,7 +18,7 @@ import com.modthemod.api.property.Type;
  * event listeners, which can be added or removed at will.
  * </p>
  */
-public class Base extends Type<Entity> implements Serializable, Cloneable {
+public final class Base extends Type<Entity> implements Serializable, Cloneable {
 	/**
 	 * Serial version UID.
 	 */
@@ -184,7 +184,6 @@ public class Base extends Type<Entity> implements Serializable, Cloneable {
 			return false;
 		}
 
-		// TODO no stack overflows!
 		Base that = (Base) other;
 
 		// This is not that if that is a superset of this.

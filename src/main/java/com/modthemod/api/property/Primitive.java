@@ -9,7 +9,7 @@ import com.modthemod.api.ModTheMod;
  * @param <T>
  *            The type of the value of this {@link Primitive}.
  */
-public class Primitive<T> extends Type<T> {
+public final class Primitive<T> extends Type<T> {
 	/**
 	 * The name of the {@link Primitive}.
 	 */

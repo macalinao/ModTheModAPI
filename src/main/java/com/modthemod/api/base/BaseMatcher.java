@@ -10,7 +10,7 @@ import com.modthemod.api.property.Type;
 /**
  * Represents a {@link Type} corresponding with {@link Base}s..
  */
-public class BaseMatcher extends Matcher {
+public final class BaseMatcher extends Matcher {
 	/**
 	 * The {@link Base}s that have to be matched.
 	 */
