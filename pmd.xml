@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2012-05-19T14:27:15.945">
+<pmd version="4.2.5" timestamp="2012-05-19T15:18:36.313">
+<file name="/home/simplyianm/Desktop/modthemod/modthemodapi/src/main/java/com/modthemod/api/base/Base.java">
+<violation beginline="177" endline="177" begincolumn="22" endcolumn="25" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="com.modthemod.api.base" class="Base" method="is" variable="type" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'type'.
+</violation>
+</file>
 <file name="/home/simplyianm/Desktop/modthemod/modthemodapi/src/main/java/com/modthemod/api/entity/Entity.java">
 <violation beginline="3" endline="3" begincolumn="1" endcolumn="21" rule="UnusedImports" ruleset="Import Statement Rules" package="com.modthemod.api.entity" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
 Avoid unused imports such as 'java.util.Map'

@@ -21,7 +21,7 @@
 <FONT color="green">018</FONT>     * event listeners, which can be added or removed at will.<a name="line.18"></a>
 <FONT color="green">019</FONT>     * &lt;/p&gt;<a name="line.19"></a>
 <FONT color="green">020</FONT>     */<a name="line.20"></a>
-<FONT color="green">021</FONT>    public class Base implements Serializable, Cloneable {<a name="line.21"></a>
+<FONT color="green">021</FONT>    public class Base extends Type&lt;Entity&gt; implements Serializable, Cloneable {<a name="line.21"></a>
 <FONT color="green">022</FONT>            /**<a name="line.22"></a>
 <FONT color="green">023</FONT>             * Serial version UID.<a name="line.23"></a>
 <FONT color="green">024</FONT>             */<a name="line.24"></a>
@@ -165,7 +165,27 @@
 <FONT color="green">162</FONT>                                    .instantiateEntity(this, args);<a name="line.162"></a>
 <FONT color="green">163</FONT>            }<a name="line.163"></a>
 <FONT color="green">164</FONT>    <a name="line.164"></a>
-<FONT color="green">165</FONT>    }<a name="line.165"></a>
+<FONT color="green">165</FONT>            @Override<a name="line.165"></a>
+<FONT color="green">166</FONT>            public String toString() {<a name="line.166"></a>
+<FONT color="green">167</FONT>                    return "(" + getName() + ")";<a name="line.167"></a>
+<FONT color="green">168</FONT>            }<a name="line.168"></a>
+<FONT color="green">169</FONT>    <a name="line.169"></a>
+<FONT color="green">170</FONT>            @Override<a name="line.170"></a>
+<FONT color="green">171</FONT>            public boolean is(Type&lt;?&gt; other) {<a name="line.171"></a>
+<FONT color="green">172</FONT>                    if (!(other instanceof Base)) {<a name="line.172"></a>
+<FONT color="green">173</FONT>                            return false;<a name="line.173"></a>
+<FONT color="green">174</FONT>                    }<a name="line.174"></a>
+<FONT color="green">175</FONT>    <a name="line.175"></a>
+<FONT color="green">176</FONT>                    // TODO no stack overflows!<a name="line.176"></a>
+<FONT color="green">177</FONT>                    Base type = (Base) other;<a name="line.177"></a>
+<FONT color="green">178</FONT>                    if (!other.is(this)) {<a name="line.178"></a>
+<FONT color="green">179</FONT>                            return false;<a name="line.179"></a>
+<FONT color="green">180</FONT>                    }<a name="line.180"></a>
+<FONT color="green">181</FONT>    <a name="line.181"></a>
+<FONT color="green">182</FONT>                    return true;<a name="line.182"></a>
+<FONT color="green">183</FONT>            }<a name="line.183"></a>
+<FONT color="green">184</FONT>    <a name="line.184"></a>
+<FONT color="green">185</FONT>    }<a name="line.185"></a>
 
 
 

@@ -8,8 +8,8 @@
     <language>en-us</language>
     <copyright>&#169;2012</copyright>
     <item>
-      <title>File: 21,
-             Errors: 727,
+      <title>File: 23,
+             Errors: 827,
              Warnings: 0,
              Infos: 0
       </title>
@@ -94,7 +94,7 @@
                   0
                 </td>
                 <td>
-                  166
+                  184
                 </td>
               </tr>
                           <tr>
@@ -109,6 +109,20 @@
                 </td>
                 <td>
                   11
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.property.BaseMatcher.java">com/modthemod/api/property/BaseMatcher.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  44
                 </td>
               </tr>
                           <tr>
@@ -136,7 +150,7 @@
                   0
                 </td>
                 <td>
-                  20
+                  30
                 </td>
               </tr>
                           <tr>
@@ -276,7 +290,21 @@
                   0
                 </td>
                 <td>
-                  52
+                  44
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.property.Matcher.java">com/modthemod/api/property/Matcher.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  36
                 </td>
               </tr>
                           <tr>
