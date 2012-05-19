@@ -14,7 +14,7 @@ public class BaseMatcher extends Matcher {
 
 	/**
 	 * Constructor for a {@link BaseMatcher}.<strong>Note: Please use
-	 * {@link Type#valueOf}.</strong>
+	 * {@link Matcher#valueOf}.</strong>
 	 * 
 	 * @param bases
 	 *            The bases that compose this {@link BaseMatcher}.
