@@ -1,5 +1,8 @@
 package com.modthemod.api.property;
 
+import com.modthemod.api.base.Base;
+import com.modthemod.api.mod.Mod;
+
 /**
  * Manages {@link Type}s.
  */
@@ -29,4 +32,14 @@ public interface TypeManager {
 	 *            The {@link Primitive} to register.
 	 */
 	public void registerPrimitive(Primitive<?> primitive);
+
+	/**
+	 * Registers a {@link Base} with the {@link TypeManager}.
+	 * 
+	 * @param base
+	 *            The {@link Base} to register.
+	 * @param mod
+	 *            The {@link Mod} to register the {@link Base} under.
+	 */
+	public void registerBase(Base base, Mod mod);
 }

@@ -1,15 +1,19 @@
-package com.modthemod.api.property;
+package com.modthemod.api.base;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.modthemod.api.base.Base;
+import com.modthemod.api.property.Matcher;
+import com.modthemod.api.property.Type;
 
 /**
- * Represents a {@link Type} corresponding with a {@link Base}.
+ * Represents a {@link Type} corresponding with {@link Base}s..
  */
 public class BaseMatcher extends Matcher {
+	/**
+	 * The {@link Base}s that have to be matched.
+	 */
 	private List<Base> bases;
 
 	/**
@@ -19,7 +23,7 @@ public class BaseMatcher extends Matcher {
 	 * @param bases
 	 *            The bases that compose this {@link BaseMatcher}.
 	 */
-	BaseMatcher(Base... bases) {
+	public BaseMatcher(Base... bases) {
 		this.bases = new ArrayList<Base>(Arrays.asList(bases));
 	}
 
