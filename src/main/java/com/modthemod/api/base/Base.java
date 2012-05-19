@@ -162,6 +162,17 @@ public class Base extends Type<Entity> implements Serializable, Cloneable {
 				.instantiateEntity(this, args);
 	}
 
+	/**
+	 * Returns true if the {@link Base} is a child of the other {@link Base}.
+	 * 
+	 * @param other
+	 *            The other {@link Base}.
+	 * @return True if the {@link Base} is a child of the other {@link Base}.
+	 */
+	public boolean isChildOf(Base other) {
+		return false; // TODO
+	}
+
 	@Override
 	public String toString() {
 		return "(" + getName() + ")";
@@ -174,8 +185,10 @@ public class Base extends Type<Entity> implements Serializable, Cloneable {
 		}
 
 		// TODO no stack overflows!
-		Base type = (Base) other;
-		if (!other.is(this)) {
+		Base that = (Base) other;
+
+		// This is not that if that is a superset of this.
+		if (!that.equals(this) || !that.isChildOf(this)) {
 			return false;
 		}
 

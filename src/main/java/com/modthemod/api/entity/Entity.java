@@ -1,7 +1,5 @@
 package com.modthemod.api.entity;
 
-import java.util.Map;
-
 import com.modthemod.api.base.Base;
 import com.modthemod.api.property.Type;
 
@@ -29,13 +27,22 @@ public abstract class Entity {
 	}
 
 	/**
+	 * Gets the {@link Base} of the {@link Entity.}
+	 * 
+	 * @return The {@link Base} of the {@link Entity.
+	 */
+	public Base getBase() {
+		return base;
+	}
+
+	/**
 	 * Gets the value of a property from its name.
 	 * 
 	 * @param name
 	 *            The name of the property.
 	 * @return The value of the property as a {@link Type}.
 	 */
-	public abstract Type getProperty(String name);
+	public abstract Type<?> getProperty(String name);
 
 	/**
 	 * Sets the value of a property from its name.
@@ -45,5 +52,5 @@ public abstract class Entity {
 	 * @param value
 	 *            The value of the property as a {@link Type}.
 	 */
-	public abstract void setProperty(String name, Type value);
+	public abstract void setProperty(String name, Type<?> value);
 }
