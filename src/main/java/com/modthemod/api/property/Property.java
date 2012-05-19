@@ -24,12 +24,13 @@ public final class Property<T> implements Serializable, Cloneable {
 	public T value;
 
 	/**
-	 * Constructor for a property.
+	 * Constructor for a property. <strong>Please use {@link Type#create}
+	 * .</strong>
 	 * 
 	 * @param value
 	 *            The value of the {@link Property}.
 	 */
-	public Property(T value) {
+	Property(T value) {
 		this.value = value;
 	}
 

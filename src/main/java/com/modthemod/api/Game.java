@@ -5,6 +5,7 @@ import com.modthemod.api.entity.EntityManager;
 import com.modthemod.api.event.EventManager;
 import com.modthemod.api.event.EventType;
 import com.modthemod.api.platform.Platform;
+import com.modthemod.api.property.TypeManager;
 
 /**
  * Represents the core Game.
@@ -46,4 +47,11 @@ public interface Game {
 	 * @return The {@link EventManager} of the game.
 	 */
 	public EventManager getEventManager();
+
+	/**
+	 * Gets the {@link TypeManager} of the game.
+	 * 
+	 * @return The {@link TypeManager} of the game.
+	 */
+	public TypeManager getTypeManager();
 }

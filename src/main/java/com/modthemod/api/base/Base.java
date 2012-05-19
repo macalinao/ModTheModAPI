@@ -18,7 +18,7 @@ import com.modthemod.api.property.Type;
  * event listeners, which can be added or removed at will.
  * </p>
  */
-public class Base implements Type<Base>, Serializable, Cloneable {
+public class Base implements Serializable, Cloneable {
 	/**
 	 * Serial version UID.
 	 */
@@ -160,11 +160,6 @@ public class Base implements Type<Base>, Serializable, Cloneable {
 	public Entity instantiate(Object... args) {
 		return ModTheMod.getGame().getEntityManager()
 				.instantiateEntity(this, args);
-	}
-
-	@Override
-	public boolean is(Type<?> other) {
-		return other.equals(this); // TODO make Type different
 	}
 
 }
