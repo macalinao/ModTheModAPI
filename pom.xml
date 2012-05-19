@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.modthemod</groupId>
 	<artifactId>modthemodapi</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>dev-SNAPSHOT</version>
 
 	<!-- Description -->
 	<name>ModTheModAPI</name>
@@ -43,7 +43,7 @@
 	<!-- Continuous integration -->
 	<ciManagement>
 		<system>travis-ci</system>
-		<url>http://travis-ci.org/#!/simplyianm/${project.name}</url>
+		<url>http://travis-ci.org/#!/simplyianm/ModTheMod</url>
 	</ciManagement>
 
 	<!-- Developers -->
@@ -68,6 +68,10 @@
 		<repository>
 			<id>spout-repo</id>
 			<url>http://repo.spout.org</url>
+		</repository>
+		<repository>
+			<id>test-voxton-repo</id>
+			<url>http://test.voxton.net/mvn/repository/</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
