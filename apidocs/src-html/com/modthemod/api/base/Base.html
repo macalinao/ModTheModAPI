@@ -21,7 +21,7 @@
 <FONT color="green">018</FONT>     * event listeners, which can be added or removed at will.<a name="line.18"></a>
 <FONT color="green">019</FONT>     * &lt;/p&gt;<a name="line.19"></a>
 <FONT color="green">020</FONT>     */<a name="line.20"></a>
-<FONT color="green">021</FONT>    public class Base implements Type&lt;Base&gt;, Serializable, Cloneable {<a name="line.21"></a>
+<FONT color="green">021</FONT>    public class Base implements Serializable, Cloneable {<a name="line.21"></a>
 <FONT color="green">022</FONT>            /**<a name="line.22"></a>
 <FONT color="green">023</FONT>             * Serial version UID.<a name="line.23"></a>
 <FONT color="green">024</FONT>             */<a name="line.24"></a>
@@ -165,12 +165,7 @@
 <FONT color="green">162</FONT>                                    .instantiateEntity(this, args);<a name="line.162"></a>
 <FONT color="green">163</FONT>            }<a name="line.163"></a>
 <FONT color="green">164</FONT>    <a name="line.164"></a>
-<FONT color="green">165</FONT>            @Override<a name="line.165"></a>
-<FONT color="green">166</FONT>            public boolean is(Type&lt;?&gt; other) {<a name="line.166"></a>
-<FONT color="green">167</FONT>                    return other.equals(this); // TODO make Type different<a name="line.167"></a>
-<FONT color="green">168</FONT>            }<a name="line.168"></a>
-<FONT color="green">169</FONT>    <a name="line.169"></a>
-<FONT color="green">170</FONT>    }<a name="line.170"></a>
+<FONT color="green">165</FONT>    }<a name="line.165"></a>
 
 
 
