@@ -1,5 +1,7 @@
 package com.modthemod.api;
 
+import java.util.logging.Logger;
+
 import com.modthemod.api.entity.EntityManager;
 import com.modthemod.api.event.EventManager;
 import com.modthemod.api.platform.Platform;
@@ -15,6 +17,13 @@ public interface Game {
 	 * @return The {@link Platform} of the game.
 	 */
 	public Platform getPlatform();
+
+	/**
+	 * Gets the {@link Logger} of the game.
+	 * 
+	 * @return The {@link Logger} of the game.
+	 */
+	public Logger getLogger();
 
 	/**
 	 * Gets the {@link EntityManager} of the game.
