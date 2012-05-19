@@ -5,6 +5,15 @@ package com.modthemod.api.property;
  */
 public interface TypeManager {
 	/**
+	 * Gets a {@link Matcher} from its string representation.
+	 * 
+	 * @param name
+	 *            The name of the {@link Matcher}.
+	 * @return The {@link Matcher} corresponding with the given name.
+	 */
+	public Matcher getMatcher(String name);
+
+	/**
 	 * Gets a {@link Type} from its name.
 	 * 
 	 * @param name
