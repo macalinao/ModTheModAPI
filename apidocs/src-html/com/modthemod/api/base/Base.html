@@ -21,7 +21,7 @@
 <FONT color="green">018</FONT>     * event listeners, which can be added or removed at will.<a name="line.18"></a>
 <FONT color="green">019</FONT>     * &lt;/p&gt;<a name="line.19"></a>
 <FONT color="green">020</FONT>     */<a name="line.20"></a>
-<FONT color="green">021</FONT>    public class Base extends Type&lt;Entity&gt; implements Serializable, Cloneable {<a name="line.21"></a>
+<FONT color="green">021</FONT>    public final class Base extends Type&lt;Entity&gt; implements Serializable, Cloneable {<a name="line.21"></a>
 <FONT color="green">022</FONT>            /**<a name="line.22"></a>
 <FONT color="green">023</FONT>             * Serial version UID.<a name="line.23"></a>
 <FONT color="green">024</FONT>             */<a name="line.24"></a>
@@ -141,7 +141,7 @@
 <FONT color="green">138</FONT>             * @return A new {@link BaseBuilder} based on this {@link Base}.<a name="line.138"></a>
 <FONT color="green">139</FONT>             */<a name="line.139"></a>
 <FONT color="green">140</FONT>            public BaseBuilder extend() {<a name="line.140"></a>
-<FONT color="green">141</FONT>                    return new BaseBuilder(this);<a name="line.141"></a>
+<FONT color="green">141</FONT>                    return new BaseBuilder(this); // TODO think about how this will work<a name="line.141"></a>
 <FONT color="green">142</FONT>            }<a name="line.142"></a>
 <FONT color="green">143</FONT>    <a name="line.143"></a>
 <FONT color="green">144</FONT>            /**<a name="line.144"></a>
@@ -165,27 +165,39 @@
 <FONT color="green">162</FONT>                                    .instantiateEntity(this, args);<a name="line.162"></a>
 <FONT color="green">163</FONT>            }<a name="line.163"></a>
 <FONT color="green">164</FONT>    <a name="line.164"></a>
-<FONT color="green">165</FONT>            @Override<a name="line.165"></a>
-<FONT color="green">166</FONT>            public String toString() {<a name="line.166"></a>
-<FONT color="green">167</FONT>                    return "(" + getName() + ")";<a name="line.167"></a>
-<FONT color="green">168</FONT>            }<a name="line.168"></a>
-<FONT color="green">169</FONT>    <a name="line.169"></a>
-<FONT color="green">170</FONT>            @Override<a name="line.170"></a>
-<FONT color="green">171</FONT>            public boolean is(Type&lt;?&gt; other) {<a name="line.171"></a>
-<FONT color="green">172</FONT>                    if (!(other instanceof Base)) {<a name="line.172"></a>
-<FONT color="green">173</FONT>                            return false;<a name="line.173"></a>
-<FONT color="green">174</FONT>                    }<a name="line.174"></a>
+<FONT color="green">165</FONT>            /**<a name="line.165"></a>
+<FONT color="green">166</FONT>             * Returns true if the {@link Base} is a child of the other {@link Base}.<a name="line.166"></a>
+<FONT color="green">167</FONT>             * <a name="line.167"></a>
+<FONT color="green">168</FONT>             * @param other<a name="line.168"></a>
+<FONT color="green">169</FONT>             *            The other {@link Base}.<a name="line.169"></a>
+<FONT color="green">170</FONT>             * @return True if the {@link Base} is a child of the other {@link Base}.<a name="line.170"></a>
+<FONT color="green">171</FONT>             */<a name="line.171"></a>
+<FONT color="green">172</FONT>            public boolean isChildOf(Base other) {<a name="line.172"></a>
+<FONT color="green">173</FONT>                    return false; // TODO<a name="line.173"></a>
+<FONT color="green">174</FONT>            }<a name="line.174"></a>
 <FONT color="green">175</FONT>    <a name="line.175"></a>
-<FONT color="green">176</FONT>                    // TODO no stack overflows!<a name="line.176"></a>
-<FONT color="green">177</FONT>                    Base type = (Base) other;<a name="line.177"></a>
-<FONT color="green">178</FONT>                    if (!other.is(this)) {<a name="line.178"></a>
-<FONT color="green">179</FONT>                            return false;<a name="line.179"></a>
-<FONT color="green">180</FONT>                    }<a name="line.180"></a>
-<FONT color="green">181</FONT>    <a name="line.181"></a>
-<FONT color="green">182</FONT>                    return true;<a name="line.182"></a>
-<FONT color="green">183</FONT>            }<a name="line.183"></a>
-<FONT color="green">184</FONT>    <a name="line.184"></a>
-<FONT color="green">185</FONT>    }<a name="line.185"></a>
+<FONT color="green">176</FONT>            @Override<a name="line.176"></a>
+<FONT color="green">177</FONT>            public String toString() {<a name="line.177"></a>
+<FONT color="green">178</FONT>                    return "(" + getName() + ")";<a name="line.178"></a>
+<FONT color="green">179</FONT>            }<a name="line.179"></a>
+<FONT color="green">180</FONT>    <a name="line.180"></a>
+<FONT color="green">181</FONT>            @Override<a name="line.181"></a>
+<FONT color="green">182</FONT>            public boolean is(Type&lt;?&gt; other) {<a name="line.182"></a>
+<FONT color="green">183</FONT>                    if (!(other instanceof Base)) {<a name="line.183"></a>
+<FONT color="green">184</FONT>                            return false;<a name="line.184"></a>
+<FONT color="green">185</FONT>                    }<a name="line.185"></a>
+<FONT color="green">186</FONT>    <a name="line.186"></a>
+<FONT color="green">187</FONT>                    Base that = (Base) other;<a name="line.187"></a>
+<FONT color="green">188</FONT>    <a name="line.188"></a>
+<FONT color="green">189</FONT>                    // This is not that if that is a superset of this.<a name="line.189"></a>
+<FONT color="green">190</FONT>                    if (!that.equals(this) || !that.isChildOf(this)) {<a name="line.190"></a>
+<FONT color="green">191</FONT>                            return false;<a name="line.191"></a>
+<FONT color="green">192</FONT>                    }<a name="line.192"></a>
+<FONT color="green">193</FONT>    <a name="line.193"></a>
+<FONT color="green">194</FONT>                    return true;<a name="line.194"></a>
+<FONT color="green">195</FONT>            }<a name="line.195"></a>
+<FONT color="green">196</FONT>    <a name="line.196"></a>
+<FONT color="green">197</FONT>    }<a name="line.197"></a>
 
 
 
