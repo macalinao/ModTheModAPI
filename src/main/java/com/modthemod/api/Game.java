@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 
 import com.modthemod.api.entity.EntityManager;
 import com.modthemod.api.event.EventManager;
+import com.modthemod.api.mod.ModManager;
 import com.modthemod.api.platform.Platform;
 import com.modthemod.api.property.TypeManager;
 
@@ -38,6 +39,13 @@ public interface Game {
 	 * @return The {@link EventManager} of the game.
 	 */
 	public EventManager getEventManager();
+
+	/**
+	 * Gets the {@link ModManager} of the game.
+	 * 
+	 * @return The {@link ModManager} of the game.
+	 */
+	public ModManager getModManager();
 
 	/**
 	 * Gets the {@link TypeManager} of the game.
