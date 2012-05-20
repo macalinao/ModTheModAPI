@@ -1,4 +1,4 @@
-package com.modthemod.api.mod.description;
+package com.modthemod.api.mod;
 
 
 /**
