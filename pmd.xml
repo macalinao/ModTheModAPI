@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2012-05-19T23:40:36.451">
+<pmd version="4.2.5" timestamp="2012-05-20T01:01:42.539">
 <file name="/home/simplyianm/Desktop/modthemod/modthemodapi/src/main/java/com/modthemod/api/property/TypeManager.java">
 <violation beginline="4" endline="4" begincolumn="1" endcolumn="33" rule="UnusedImports" ruleset="Import Statement Rules" package="com.modthemod.api.property" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
 Avoid unused imports such as 'com.modthemod.api.mod.Mod'
