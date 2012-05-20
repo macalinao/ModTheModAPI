@@ -1,40 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2012-05-20T18:38:23.783">
+<pmd version="4.2.5" timestamp="2012-05-20T18:46:35.701">
 <file name="/home/simplyianm/Desktop/modthemod/modthemodapi/src/main/java/com/modthemod/api/mod/ModDescription.java">
-<violation beginline="12" endline="12" begincolumn="24" endcolumn="27" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.modthemod.api.mod" class="ModDescription" variable="name" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
-Avoid unused private fields such as 'name'.
-</violation>
-<violation beginline="17" endline="17" begincolumn="24" endcolumn="30" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.modthemod.api.mod" class="ModDescription" variable="version" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
-Avoid unused private fields such as 'version'.
-</violation>
-<violation beginline="22" endline="22" begincolumn="24" endcolumn="29" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.modthemod.api.mod" class="ModDescription" variable="author" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
-Avoid unused private fields such as 'author'.
-</violation>
-<violation beginline="27" endline="27" begincolumn="24" endcolumn="34" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.modthemod.api.mod" class="ModDescription" variable="description" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
-Avoid unused private fields such as 'description'.
-</violation>
-<violation beginline="32" endline="32" begincolumn="31" endcolumn="42" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.modthemod.api.mod" class="ModDescription" variable="contributors" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
-Avoid unused private fields such as 'contributors'.
-</violation>
-<violation beginline="37" endline="37" begincolumn="24" endcolumn="27" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.modthemod.api.mod" class="ModDescription" variable="main" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
-Avoid unused private fields such as 'main'.
-</violation>
-<violation beginline="47" endline="47" begincolumn="24" endcolumn="29" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.modthemod.api.mod" class="ModDescription" variable="github" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
-Avoid unused private fields such as 'github'.
-</violation>
-<violation beginline="52" endline="52" begincolumn="26" endcolumn="37" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.modthemod.api.mod" class="ModDescription" variable="dependencies" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
-Avoid unused private fields such as 'dependencies'.
-</violation>
-<violation beginline="58" endline="58" begincolumn="24" endcolumn="30" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.modthemod.api.mod" class="ModDescription" variable="license" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
-Avoid unused private fields such as 'license'.
-</violation>
-<violation beginline="63" endline="63" begincolumn="24" endcolumn="36" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.modthemod.api.mod" class="ModDescription" variable="engineVersion" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
-Avoid unused private fields such as 'engineVersion'.
-</violation>
-<violation beginline="76" endline="76" begincolumn="38" endcolumn="41" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.modthemod.api.mod" class="ModDescription$Contributor" variable="name" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
-Avoid unused private fields such as 'name'.
-</violation>
-<violation beginline="81" endline="81" begincolumn="38" endcolumn="42" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.modthemod.api.mod" class="ModDescription$Contributor" variable="email" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
+<violation beginline="151" endline="151" begincolumn="38" endcolumn="42" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.modthemod.api.mod" class="ModDescription$Contributor" variable="email" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
 Avoid unused private fields such as 'email'.
 </violation>
 </file>
