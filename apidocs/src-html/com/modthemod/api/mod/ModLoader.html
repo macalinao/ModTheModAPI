@@ -12,39 +12,46 @@
 <FONT color="green">009</FONT>     */<a name="line.9"></a>
 <FONT color="green">010</FONT>    public interface ModLoader {<a name="line.10"></a>
 <FONT color="green">011</FONT>            /**<a name="line.11"></a>
-<FONT color="green">012</FONT>             * Loads a {@link Mod} with the given {@link File}.<a name="line.12"></a>
+<FONT color="green">012</FONT>             * Gets the language of the mods loaded by this {@link ModLoader}.<a name="line.12"></a>
 <FONT color="green">013</FONT>             * <a name="line.13"></a>
-<FONT color="green">014</FONT>             * @param file<a name="line.14"></a>
-<FONT color="green">015</FONT>             *            The {@link File} to load.<a name="line.15"></a>
-<FONT color="green">016</FONT>             * @return The {@link Mod} loaded.<a name="line.16"></a>
-<FONT color="green">017</FONT>             */<a name="line.17"></a>
-<FONT color="green">018</FONT>            public Mod loadMod(File file);<a name="line.18"></a>
-<FONT color="green">019</FONT>    <a name="line.19"></a>
-<FONT color="green">020</FONT>            /**<a name="line.20"></a>
-<FONT color="green">021</FONT>             * Gets a {@link List} of all file filters that match files of this<a name="line.21"></a>
-<FONT color="green">022</FONT>             * {@link ModLoader}'s type.<a name="line.22"></a>
-<FONT color="green">023</FONT>             * <a name="line.23"></a>
-<FONT color="green">024</FONT>             * @return A {@link List} of all file filters that match files of this<a name="line.24"></a>
-<FONT color="green">025</FONT>             *         {@link ModLoader}'s type.<a name="line.25"></a>
-<FONT color="green">026</FONT>             */<a name="line.26"></a>
-<FONT color="green">027</FONT>            public List&lt;Pattern&gt; getFileFilters();<a name="line.27"></a>
-<FONT color="green">028</FONT>    <a name="line.28"></a>
-<FONT color="green">029</FONT>            /**<a name="line.29"></a>
-<FONT color="green">030</FONT>             * Enables the {@link Mod}.<a name="line.30"></a>
-<FONT color="green">031</FONT>             * <a name="line.31"></a>
-<FONT color="green">032</FONT>             * @param mod<a name="line.32"></a>
-<FONT color="green">033</FONT>             *            The {@link Mod} to enable.<a name="line.33"></a>
-<FONT color="green">034</FONT>             */<a name="line.34"></a>
-<FONT color="green">035</FONT>            public void enableMod(Mod mod);<a name="line.35"></a>
-<FONT color="green">036</FONT>    <a name="line.36"></a>
-<FONT color="green">037</FONT>            /**<a name="line.37"></a>
-<FONT color="green">038</FONT>             * Disables the {@link Mod}.<a name="line.38"></a>
-<FONT color="green">039</FONT>             * <a name="line.39"></a>
-<FONT color="green">040</FONT>             * @param mod<a name="line.40"></a>
-<FONT color="green">041</FONT>             *            The {@link Mod} to disable.<a name="line.41"></a>
-<FONT color="green">042</FONT>             */<a name="line.42"></a>
-<FONT color="green">043</FONT>            public void disableMod(Mod mod);<a name="line.43"></a>
-<FONT color="green">044</FONT>    }<a name="line.44"></a>
+<FONT color="green">014</FONT>             * @return The language of the mods loaded by this {@link ModLoader}.<a name="line.14"></a>
+<FONT color="green">015</FONT>             */<a name="line.15"></a>
+<FONT color="green">016</FONT>            public String getLanguage();<a name="line.16"></a>
+<FONT color="green">017</FONT>    <a name="line.17"></a>
+<FONT color="green">018</FONT>            /**<a name="line.18"></a>
+<FONT color="green">019</FONT>             * Loads a {@link Mod} with the given {@link File}.<a name="line.19"></a>
+<FONT color="green">020</FONT>             * <a name="line.20"></a>
+<FONT color="green">021</FONT>             * @param file<a name="line.21"></a>
+<FONT color="green">022</FONT>             *            The {@link File} to load.<a name="line.22"></a>
+<FONT color="green">023</FONT>             * @return The {@link Mod} loaded.<a name="line.23"></a>
+<FONT color="green">024</FONT>             */<a name="line.24"></a>
+<FONT color="green">025</FONT>            public Mod loadMod(File file);<a name="line.25"></a>
+<FONT color="green">026</FONT>    <a name="line.26"></a>
+<FONT color="green">027</FONT>            /**<a name="line.27"></a>
+<FONT color="green">028</FONT>             * Gets a {@link List} of all file filters that match files of this<a name="line.28"></a>
+<FONT color="green">029</FONT>             * {@link ModLoader}'s type.<a name="line.29"></a>
+<FONT color="green">030</FONT>             * <a name="line.30"></a>
+<FONT color="green">031</FONT>             * @return A {@link List} of all file filters that match files of this<a name="line.31"></a>
+<FONT color="green">032</FONT>             *         {@link ModLoader}'s type.<a name="line.32"></a>
+<FONT color="green">033</FONT>             */<a name="line.33"></a>
+<FONT color="green">034</FONT>            public List&lt;Pattern&gt; getFileFilters();<a name="line.34"></a>
+<FONT color="green">035</FONT>    <a name="line.35"></a>
+<FONT color="green">036</FONT>            /**<a name="line.36"></a>
+<FONT color="green">037</FONT>             * Enables the {@link Mod}.<a name="line.37"></a>
+<FONT color="green">038</FONT>             * <a name="line.38"></a>
+<FONT color="green">039</FONT>             * @param mod<a name="line.39"></a>
+<FONT color="green">040</FONT>             *            The {@link Mod} to enable.<a name="line.40"></a>
+<FONT color="green">041</FONT>             */<a name="line.41"></a>
+<FONT color="green">042</FONT>            public void enableMod(Mod mod);<a name="line.42"></a>
+<FONT color="green">043</FONT>    <a name="line.43"></a>
+<FONT color="green">044</FONT>            /**<a name="line.44"></a>
+<FONT color="green">045</FONT>             * Disables the {@link Mod}.<a name="line.45"></a>
+<FONT color="green">046</FONT>             * <a name="line.46"></a>
+<FONT color="green">047</FONT>             * @param mod<a name="line.47"></a>
+<FONT color="green">048</FONT>             *            The {@link Mod} to disable.<a name="line.48"></a>
+<FONT color="green">049</FONT>             */<a name="line.49"></a>
+<FONT color="green">050</FONT>            public void disableMod(Mod mod);<a name="line.50"></a>
+<FONT color="green">051</FONT>    }<a name="line.51"></a>
 
 
 
