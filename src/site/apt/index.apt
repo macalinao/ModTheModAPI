@@ -1,0 +1,5 @@
+    <<ModTheMod>> is a mod made for the Spout modding API that allows smaller mods to be made in various scripting languages relatively quickly.
+
+    Often times, it is rather unreasonable to make a mod in Java, having to maintain a JAR with only two or three lines of code. Furthermore, Java is a rather verbose language, so it takes time out of making your ideas work out well.
+
+    The ultimate goal of ModTheMod is to provide a lightweight but powerful modding system for Spout.

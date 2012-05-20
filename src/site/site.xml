@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="${project.name} - ${project.blurb}">
+    <!-- Skin -->
+    <skin>
+        <groupId>com.googlecode.fluido-skin</groupId>
+        <artifactId>fluido-skin</artifactId>
+        <version>1.3</version>
+    </skin>
+    
+    <!-- Publishing stuff -->
+    <publishDate position="left" format="yyyy-MM-dd"/>
+    <version position="left"/>
+    
+    <!-- Body -->
+    <body>
+        <menu name="${project.name}">
+            <item name="Introduction" href="index.html" />
+        </menu>
+        
+        <menu ref="reports" />
+        
+        <menu ref="modules" />
+
+        <menu name="External Links">
+            <item name="My Website" href="http://simplyian.com/"/>
+            <item name="Youtube" href="http://youtube.com/simplyianm/"/>
+            <item name="Twitter" href="https://twitter.com/simplyianm/"/>
+        </menu>
+    </body>
+</project>
