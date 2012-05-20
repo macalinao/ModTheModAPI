@@ -6,6 +6,7 @@ import java.io.Serializable;
  * Represents a cloneable property containing data.
  * 
  * @param <T>
+ *            The type of the {@link Property}.
  */
 public final class Property<T> implements Serializable, Cloneable {
 	/**
@@ -16,12 +17,12 @@ public final class Property<T> implements Serializable, Cloneable {
 	/**
 	 * The {@link Type} of the {@link Property}.
 	 */
-	public Type<T> type;
+	private Type<T> type;
 
 	/**
 	 * The value of the {@link Property}.
 	 */
-	public T value;
+	private T value;
 
 	/**
 	 * Constructor for a property. <strong>Please use {@link Type#create}
@@ -43,5 +44,23 @@ public final class Property<T> implements Serializable, Cloneable {
 	 */
 	public boolean is(Type<?> other) {
 		return type.is(other);
+	}
+
+	/**
+	 * Gets the type
+	 * 
+	 * @return the type
+	 */
+	public Type<T> getType() {
+		return type;
+	}
+
+	/**
+	 * Gets the value
+	 * 
+	 * @return the value
+	 */
+	public T getValue() {
+		return value;
 	}
 }

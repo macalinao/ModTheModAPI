@@ -38,8 +38,6 @@ public interface TypeManager {
 	 * 
 	 * @param base
 	 *            The {@link Base} to register.
-	 * @param mod
-	 *            The {@link Mod} to register the {@link Base} under.
 	 */
-	public void registerBase(Base base, Mod mod);
+	public void registerBase(Base base);
 }

@@ -1,14 +1,16 @@
 package com.modthemod.api.base;
 
 import java.io.Serializable;
-import java.util.HashMap;
+import java.util.Map;
 
 import com.modthemod.api.ModTheMod;
 import com.modthemod.api.entity.Entity;
 import com.modthemod.api.event.EventListener;
 import com.modthemod.api.event.EventType;
+import com.modthemod.api.mod.Mod;
 import com.modthemod.api.property.Property;
 import com.modthemod.api.property.Type;
+import com.modthemod.api.util.Method;
 
 /**
  * Represents a base of an {@link Entity}.
@@ -30,9 +32,20 @@ public final class Base extends Type<Entity> implements Serializable, Cloneable 
 	private final String name;
 
 	/**
+	 * The {@link Mod} of the base.
+	 */
+	private final Mod mod;
+
+	/**
 	 * The Map containing the properties of the base. Immutable.
 	 */
-	private final HashMap<String, Property<?>> properties;
+	final Map<String, Property<?>> properties;
+
+	/**
+	 * The {@link Map} containing the {@link Method}s of the {@link Base}.
+	 * Immutable.
+	 */
+	final Map<String, Method> methods;
 
 	/**
 	 * The {@link Instantiator} that runs on entities when they are created.
@@ -52,12 +65,18 @@ public final class Base extends Type<Entity> implements Serializable, Cloneable 
 	 *            The name of the {@link Base}.
 	 * @param properties
 	 *            The properties of the {@link Base}.
+	 * @param methods
+	 *            The methods of the {@link Base}.
+	 * @param instantiator
+	 *            The instantiator of the {@link Base}.
 	 */
-	Base(String name, HashMap<String, Property<?>> properties,
-			Instantiator initiator) {
+	Base(String name, Map<String, Property<?>> properties,
+			Map<String, Method> methods, Instantiator instantiator, Mod mod) {
 		this.name = name;
 		this.properties = properties;
-		this.instantiator = initiator;
+		this.methods = methods;
+		this.instantiator = instantiator;
+		this.mod = mod;
 	}
 
 	/**
@@ -66,7 +85,16 @@ public final class Base extends Type<Entity> implements Serializable, Cloneable 
 	 * @return The name of this {@link Base}.
 	 */
 	public String getName() {
-		return this.name;
+		return name;
+	}
+
+	/**
+	 * Gets the {@link Mod} associated with this {@link Base}.
+	 * 
+	 * @return The {@link Mod} associated with this {@link Base}.
+	 */
+	public Mod getMod() {
+		return mod;
 	}
 
 	/**
@@ -78,17 +106,6 @@ public final class Base extends Type<Entity> implements Serializable, Cloneable 
 	 */
 	public Property<?> getProperty(String name) {
 		return properties.get(name);
-	}
-
-	/**
-	 * Gets a cloned {@link HashMap} of the properties of this {@link Base}.
-	 * 
-	 * @return A cloned {@link HashMap} of the properties of this {@link Base}.
-	 */
-	@SuppressWarnings("unchecked")
-	public HashMap<String, Property<?>> getProperties() {
-		// TODO Deep-clone properties...?
-		return (HashMap<String, Property<?>>) properties.clone();
 	}
 
 	/**
@@ -138,7 +155,7 @@ public final class Base extends Type<Entity> implements Serializable, Cloneable 
 	 * @return A new {@link BaseBuilder} based on this {@link Base}.
 	 */
 	public BaseBuilder extend() {
-		return new BaseBuilder(this); // TODO think about how this will work
+		return new BaseBuilder("a"); // TODO think about how this will work
 	}
 
 	/**
