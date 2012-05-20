@@ -67,6 +67,76 @@ public class ModDescription {
 	}
 
 	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @return the version
+	 */
+	public String getVersion() {
+		return version;
+	}
+
+	/**
+	 * @return the author
+	 */
+	public String getAuthor() {
+		return author;
+	}
+
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * @return the contributors
+	 */
+	public Contributor[] getContributors() {
+		return contributors;
+	}
+
+	/**
+	 * @return the main
+	 */
+	public String getMain() {
+		return main;
+	}
+
+	/**
+	 * @return the github
+	 */
+	public String getGithub() {
+		return github;
+	}
+
+	/**
+	 * @return the dependencies
+	 */
+	public String[] getDependencies() {
+		return dependencies;
+	}
+
+	/**
+	 * @return the license
+	 */
+	public String getLicense() {
+		return license;
+	}
+
+	/**
+	 * @return the engineVersion
+	 */
+	public String getEngineVersion() {
+		return engineVersion;
+	}
+
+	/**
 	 * Represents a contributor to the mod.
 	 */
 	public class Contributor {
