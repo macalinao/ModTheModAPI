@@ -1,5 +1,6 @@
 package com.modthemod.api.mod;
 
+import java.io.File;
 
 /**
  * Contains the description for the mod.
@@ -61,6 +62,10 @@ public class ModDescription {
 	 */
 	private String engineVersion;
 
+	public static ModDescription load(File file) {
+		return null; // TODO
+	}
+
 	/**
 	 * Represents a contributor to the mod.
 	 */
@@ -68,11 +73,16 @@ public class ModDescription {
 		/**
 		 * The name of the contributor.
 		 */
-		private String name;
-		
+		private final String name;
+
 		/**
 		 * The email of the contributor.
 		 */
-		private String email;
+		private final String email;
+
+		public Contributor(String name, String email) {
+			this.name = name;
+			this.email = email;
+		}
 	}
 }
