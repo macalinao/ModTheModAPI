@@ -9,6 +9,13 @@ import java.util.regex.Pattern;
  */
 public interface ModLoader {
 	/**
+	 * Gets the language of the mods loaded by this {@link ModLoader}.
+	 * 
+	 * @return The language of the mods loaded by this {@link ModLoader}.
+	 */
+	public String getLanguage();
+
+	/**
 	 * Loads a {@link Mod} with the given {@link File}.
 	 * 
 	 * @param file
