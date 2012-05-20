@@ -6,14 +6,22 @@
 <FONT color="green">003</FONT>    /**<a name="line.3"></a>
 <FONT color="green">004</FONT>     * Represents a mod.<a name="line.4"></a>
 <FONT color="green">005</FONT>     */<a name="line.5"></a>
-<FONT color="green">006</FONT>    public interface Mod {<a name="line.6"></a>
-<FONT color="green">007</FONT>            /**<a name="line.7"></a>
-<FONT color="green">008</FONT>             * Gets the name of the mod.<a name="line.8"></a>
-<FONT color="green">009</FONT>             * <a name="line.9"></a>
-<FONT color="green">010</FONT>             * @return The name of the mod.<a name="line.10"></a>
-<FONT color="green">011</FONT>             */<a name="line.11"></a>
-<FONT color="green">012</FONT>            public String getName();<a name="line.12"></a>
-<FONT color="green">013</FONT>    }<a name="line.13"></a>
+<FONT color="green">006</FONT>    public abstract class Mod {<a name="line.6"></a>
+<FONT color="green">007</FONT>            private final String name;<a name="line.7"></a>
+<FONT color="green">008</FONT>    <a name="line.8"></a>
+<FONT color="green">009</FONT>            protected Mod(String name) {<a name="line.9"></a>
+<FONT color="green">010</FONT>                    this.name = name;<a name="line.10"></a>
+<FONT color="green">011</FONT>            }<a name="line.11"></a>
+<FONT color="green">012</FONT>    <a name="line.12"></a>
+<FONT color="green">013</FONT>            /**<a name="line.13"></a>
+<FONT color="green">014</FONT>             * Gets the name of the mod.<a name="line.14"></a>
+<FONT color="green">015</FONT>             * <a name="line.15"></a>
+<FONT color="green">016</FONT>             * @return The name of the mod.<a name="line.16"></a>
+<FONT color="green">017</FONT>             */<a name="line.17"></a>
+<FONT color="green">018</FONT>            public String getName() {<a name="line.18"></a>
+<FONT color="green">019</FONT>                    return name;<a name="line.19"></a>
+<FONT color="green">020</FONT>            }<a name="line.20"></a>
+<FONT color="green">021</FONT>    }<a name="line.21"></a>
 
 
 
