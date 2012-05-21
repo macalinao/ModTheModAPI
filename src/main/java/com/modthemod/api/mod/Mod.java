@@ -26,11 +26,4 @@ public interface Mod {
 	 * @return The {@link Logger} for this mod.
 	 */
 	public Logger getLogger();
-
-	/**
-	 * Gets the {@link ModLoader} that loaded this {@link Mod}.
-	 * 
-	 * @return The {@link ModLoader} that loaded this {@link Mod}.
-	 */
-	public ModLoader getModLoader();
 }

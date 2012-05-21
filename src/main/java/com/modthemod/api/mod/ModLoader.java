@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 /**
  * Represents an interface to load {@link Mod}s.
  */
-public interface ModLoader {
+public interface ModLoader<T extends Mod> {
 	/**
 	 * Gets the language of the mods loaded by this {@link ModLoader}.
 	 * 
@@ -22,7 +22,17 @@ public interface ModLoader {
 	 *            The {@link File} to load.
 	 * @return The {@link Mod} loaded.
 	 */
-	public Mod loadMod(File file);
+	public T loadMod(File file);
+
+	/**
+	 * Loads a {@link ModDescription} from its {@link File}.
+	 * 
+	 * @param file
+	 *            The {@link File} containing the {@link ModDescription}. (Read:
+	 *            mod.json)
+	 * @return The parsed {@link ModDescription}.
+	 */
+	public ModDescription loadDescription(File file);
 
 	/**
 	 * Gets a {@link List} of all file filters that match files of this
@@ -39,7 +49,7 @@ public interface ModLoader {
 	 * @param mod
 	 *            The {@link Mod} to enable.
 	 */
-	public void enableMod(Mod mod);
+	public void enableMod(T mod);
 
 	/**
 	 * Disables the {@link Mod}.
@@ -47,5 +57,5 @@ public interface ModLoader {
 	 * @param mod
 	 *            The {@link Mod} to disable.
 	 */
-	public void disableMod(Mod mod);
+	public void disableMod(T mod);
 }
