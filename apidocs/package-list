@@ -3,6 +3,7 @@ com.modthemod.api.base
 com.modthemod.api.entity
 com.modthemod.api.event
 com.modthemod.api.mod
+com.modthemod.api.mod.java
 com.modthemod.api.platform
 com.modthemod.api.property
 com.modthemod.api.util

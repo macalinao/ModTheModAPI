@@ -17,7 +17,7 @@
 <a class="jxr_linenumber" name="7" href="#7">7</a>   <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="8" href="#8">8</a>   <em class="jxr_javadoccomment"> * Represents an interface to load {@link Mod}s.</em>
 <a class="jxr_linenumber" name="9" href="#9">9</a>   <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="10" href="#10">10</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">interface</strong> <a href="../../../../com/modthemod/api/mod/ModLoader.html">ModLoader</a> {
+<a class="jxr_linenumber" name="10" href="#10">10</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">interface</strong> ModLoader&lt;T <strong class="jxr_keyword">extends</strong> Mod&gt; {
 <a class="jxr_linenumber" name="11" href="#11">11</a>  	<em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="12" href="#12">12</a>  <em class="jxr_javadoccomment">	 * Gets the language of the mods loaded by this {@link ModLoader}.</em>
 <a class="jxr_linenumber" name="13" href="#13">13</a>  <em class="jxr_javadoccomment">	 * </em>
@@ -32,33 +32,43 @@
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <em class="jxr_javadoccomment">	 *            The {@link File} to load.</em>
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <em class="jxr_javadoccomment">	 * @return The {@link Mod} loaded.</em>
 <a class="jxr_linenumber" name="24" href="#24">24</a>  <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="25" href="#25">25</a>  	<strong class="jxr_keyword">public</strong> <a href="../../../../com/modthemod/api/mod/Mod.html">Mod</a> loadMod(File file);
+<a class="jxr_linenumber" name="25" href="#25">25</a>  	<strong class="jxr_keyword">public</strong> T loadMod(File file);
 <a class="jxr_linenumber" name="26" href="#26">26</a>  
 <a class="jxr_linenumber" name="27" href="#27">27</a>  	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="28" href="#28">28</a>  <em class="jxr_javadoccomment">	 * Gets a {@link List} of all file filters that match files of this</em>
-<a class="jxr_linenumber" name="29" href="#29">29</a>  <em class="jxr_javadoccomment">	 * {@link ModLoader}'s type.</em>
-<a class="jxr_linenumber" name="30" href="#30">30</a>  <em class="jxr_javadoccomment">	 * </em>
-<a class="jxr_linenumber" name="31" href="#31">31</a>  <em class="jxr_javadoccomment">	 * @return A {@link List} of all file filters that match files of this</em>
-<a class="jxr_linenumber" name="32" href="#32">32</a>  <em class="jxr_javadoccomment">	 *         {@link ModLoader}'s type.</em>
-<a class="jxr_linenumber" name="33" href="#33">33</a>  <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="34" href="#34">34</a>  	<strong class="jxr_keyword">public</strong> List&lt;Pattern&gt; getFileFilters();
-<a class="jxr_linenumber" name="35" href="#35">35</a>  
-<a class="jxr_linenumber" name="36" href="#36">36</a>  	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="37" href="#37">37</a>  <em class="jxr_javadoccomment">	 * Enables the {@link Mod}.</em>
-<a class="jxr_linenumber" name="38" href="#38">38</a>  <em class="jxr_javadoccomment">	 * </em>
-<a class="jxr_linenumber" name="39" href="#39">39</a>  <em class="jxr_javadoccomment">	 * @param mod</em>
-<a class="jxr_linenumber" name="40" href="#40">40</a>  <em class="jxr_javadoccomment">	 *            The {@link Mod} to enable.</em>
-<a class="jxr_linenumber" name="41" href="#41">41</a>  <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="42" href="#42">42</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> enableMod(<a href="../../../../com/modthemod/api/mod/Mod.html">Mod</a> mod);
-<a class="jxr_linenumber" name="43" href="#43">43</a>  
-<a class="jxr_linenumber" name="44" href="#44">44</a>  	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="45" href="#45">45</a>  <em class="jxr_javadoccomment">	 * Disables the {@link Mod}.</em>
-<a class="jxr_linenumber" name="46" href="#46">46</a>  <em class="jxr_javadoccomment">	 * </em>
-<a class="jxr_linenumber" name="47" href="#47">47</a>  <em class="jxr_javadoccomment">	 * @param mod</em>
-<a class="jxr_linenumber" name="48" href="#48">48</a>  <em class="jxr_javadoccomment">	 *            The {@link Mod} to disable.</em>
-<a class="jxr_linenumber" name="49" href="#49">49</a>  <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="50" href="#50">50</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> disableMod(<a href="../../../../com/modthemod/api/mod/Mod.html">Mod</a> mod);
-<a class="jxr_linenumber" name="51" href="#51">51</a>  }
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <em class="jxr_javadoccomment">	 * Loads a {@link ModDescription} from its {@link File}.</em>
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <em class="jxr_javadoccomment">	 * </em>
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <em class="jxr_javadoccomment">	 * @param file</em>
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <em class="jxr_javadoccomment">	 *            The {@link File} containing the {@link ModDescription}. (Read:</em>
+<a class="jxr_linenumber" name="32" href="#32">32</a>  <em class="jxr_javadoccomment">	 *            mod.json)</em>
+<a class="jxr_linenumber" name="33" href="#33">33</a>  <em class="jxr_javadoccomment">	 * @return The parsed {@link ModDescription}.</em>
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="35" href="#35">35</a>  	<strong class="jxr_keyword">public</strong> <a href="../../../../com/modthemod/api/mod/ModDescription.html">ModDescription</a> loadDescription(File file);
+<a class="jxr_linenumber" name="36" href="#36">36</a>  
+<a class="jxr_linenumber" name="37" href="#37">37</a>  	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="38" href="#38">38</a>  <em class="jxr_javadoccomment">	 * Gets a {@link List} of all file filters that match files of this</em>
+<a class="jxr_linenumber" name="39" href="#39">39</a>  <em class="jxr_javadoccomment">	 * {@link ModLoader}'s type.</em>
+<a class="jxr_linenumber" name="40" href="#40">40</a>  <em class="jxr_javadoccomment">	 * </em>
+<a class="jxr_linenumber" name="41" href="#41">41</a>  <em class="jxr_javadoccomment">	 * @return A {@link List} of all file filters that match files of this</em>
+<a class="jxr_linenumber" name="42" href="#42">42</a>  <em class="jxr_javadoccomment">	 *         {@link ModLoader}'s type.</em>
+<a class="jxr_linenumber" name="43" href="#43">43</a>  <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="44" href="#44">44</a>  	<strong class="jxr_keyword">public</strong> List&lt;Pattern&gt; getFileFilters();
+<a class="jxr_linenumber" name="45" href="#45">45</a>  
+<a class="jxr_linenumber" name="46" href="#46">46</a>  	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="47" href="#47">47</a>  <em class="jxr_javadoccomment">	 * Enables the {@link Mod}.</em>
+<a class="jxr_linenumber" name="48" href="#48">48</a>  <em class="jxr_javadoccomment">	 * </em>
+<a class="jxr_linenumber" name="49" href="#49">49</a>  <em class="jxr_javadoccomment">	 * @param mod</em>
+<a class="jxr_linenumber" name="50" href="#50">50</a>  <em class="jxr_javadoccomment">	 *            The {@link Mod} to enable.</em>
+<a class="jxr_linenumber" name="51" href="#51">51</a>  <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="52" href="#52">52</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> enableMod(T mod);
+<a class="jxr_linenumber" name="53" href="#53">53</a>  
+<a class="jxr_linenumber" name="54" href="#54">54</a>  	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="55" href="#55">55</a>  <em class="jxr_javadoccomment">	 * Disables the {@link Mod}.</em>
+<a class="jxr_linenumber" name="56" href="#56">56</a>  <em class="jxr_javadoccomment">	 * </em>
+<a class="jxr_linenumber" name="57" href="#57">57</a>  <em class="jxr_javadoccomment">	 * @param mod</em>
+<a class="jxr_linenumber" name="58" href="#58">58</a>  <em class="jxr_javadoccomment">	 *            The {@link Mod} to disable.</em>
+<a class="jxr_linenumber" name="59" href="#59">59</a>  <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="60" href="#60">60</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> disableMod(T mod);
+<a class="jxr_linenumber" name="61" href="#61">61</a>  }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>
