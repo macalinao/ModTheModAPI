@@ -160,5 +160,19 @@ public class ModDescription {
 			this.name = name;
 			this.email = email;
 		}
+
+		/**
+		 * @return the name
+		 */
+		public String getName() {
+			return name;
+		}
+
+		/**
+		 * @return the email
+		 */
+		public String getEmail() {
+			return email;
+		}
 	}
 }
