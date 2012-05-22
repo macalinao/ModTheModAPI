@@ -1,6 +1,6 @@
 package com.modthemod.api.mod;
 
-import java.util.List;
+import java.util.Set;
 
 /**
  * Manages mods.
@@ -15,11 +15,11 @@ public interface ModManager {
 	public Mod getMod(String name);
 
 	/**
-	 * Gets a list of all loaded mods.
+	 * Gets a set of all loaded mods.
 	 * 
 	 * @return
 	 */
-	public List<Mod> getMods();
+	public Set<Mod> getMods();
 
 	/**
 	 * Registers a {@link ModLoader} with the {@link ModManager}.

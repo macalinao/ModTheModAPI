@@ -26,4 +26,19 @@ public interface Mod {
 	 * @return The {@link Logger} for this mod.
 	 */
 	public Logger getLogger();
+
+	/**
+	 * Called when the mod is loaded.
+	 */
+	public void onLoad();
+
+	/**
+	 * Called when the mod is enabled.
+	 */
+	public void onEnable();
+
+	/**
+	 * Called when the mod is disabled.
+	 */
+	public void onDisable();
 }

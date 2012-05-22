@@ -4,14 +4,13 @@ import java.util.logging.Logger;
 
 import com.modthemod.api.mod.Mod;
 import com.modthemod.api.mod.ModDescription;
-import com.modthemod.api.mod.ModLoader;
 import com.modthemod.api.mod.ModLogger;
 
 /**
  * A Java mod.
  */
 public class JavaMod implements Mod {
-	private ModLoader loader;
+	private JavaModLoader loader;
 
 	private Logger logger;
 
@@ -22,15 +21,15 @@ public class JavaMod implements Mod {
 	 */
 	private ModDescription description;
 
-	/**
-	 * Called when the mod is enabled.
-	 */
+	@Override
+	public void onLoad() {
+	}
+
+	@Override
 	public void onEnable() {
 	}
 
-	/**
-	 * Called when the mod is disabled.
-	 */
+	@Override
 	public void onDisable() {
 	}
 
@@ -49,7 +48,7 @@ public class JavaMod implements Mod {
 		return logger;
 	}
 
-	public ModLoader getModLoader() {
+	public JavaModLoader getModLoader() {
 		return loader;
 	}
 
@@ -58,7 +57,7 @@ public class JavaMod implements Mod {
 	 * 
 	 * @param loader
 	 */
-	void initialize(ModDescription description, ModLoader loader) {
+	void initialize(ModDescription description, JavaModLoader loader) {
 		if (initialized) {
 			throw new IllegalStateException("Mod already initialized!");
 		}
