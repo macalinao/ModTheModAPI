@@ -28,6 +28,13 @@ public interface Mod {
 	public Logger getLogger();
 
 	/**
+	 * Returns true if the {@link Mod} is enabled.
+	 * 
+	 * @return True if the {@link Mod} is enabled.
+	 */
+	public boolean isEnabled();
+
+	/**
 	 * Called when the mod is loaded.
 	 */
 	public void onLoad();

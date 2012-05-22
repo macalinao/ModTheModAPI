@@ -34,12 +34,16 @@ public class JavaModLoader implements ModLoader<JavaMod> {
 
 	@Override
 	public void enableMod(JavaMod mod) {
-		mod.onEnable();
+		if (!mod.isEnabled()) {
+			mod.setEnabled(true);
+		}
 	}
 
 	@Override
 	public void disableMod(JavaMod mod) {
-		mod.onDisable();
+		if (mod.isEnabled()) {
+			mod.setEnabled(false);
+		}
 	}
 
 }

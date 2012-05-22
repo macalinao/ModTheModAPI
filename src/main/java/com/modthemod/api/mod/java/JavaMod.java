@@ -12,6 +12,8 @@ import com.modthemod.api.mod.ModLogger;
 public class JavaMod implements Mod {
 	private JavaModLoader loader;
 
+	private boolean enabled = false;
+
 	private Logger logger;
 
 	private boolean initialized = false;
@@ -46,6 +48,28 @@ public class JavaMod implements Mod {
 	@Override
 	public Logger getLogger() {
 		return logger;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	/**
+	 * Sets this plugin's enabled status.
+	 * 
+	 * @param enabled
+	 *            True if enabled, false if disabled.
+	 */
+	protected void setEnabled(final boolean enabled) {
+		if (this.enabled != enabled) {
+			this.enabled = enabled;
+			if (this.enabled) {
+				onEnable();
+			} else {
+				onDisable();
+			}
+		}
 	}
 
 	public JavaModLoader getModLoader() {
