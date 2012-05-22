@@ -26,5 +26,5 @@ public interface ModManager {
 	 * 
 	 * @param loader
 	 */
-	public void registerModLoader(ModLoader loader);
+	public void registerModLoader(ModLoader<?> loader);
 }
