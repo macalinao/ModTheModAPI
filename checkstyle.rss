@@ -8,8 +8,8 @@
     <language>en-us</language>
     <copyright>&#169;2012</copyright>
     <item>
-      <title>File: 29,
-             Errors: 1466,
+      <title>File: 30,
+             Errors: 1507,
              Warnings: 0,
              Infos: 0
       </title>
@@ -67,6 +67,20 @@
                 </td>
                 <td>
                   209
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.platform.FileHierarchy.java">com/modthemod/api/platform/FileHierarchy.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  33
                 </td>
               </tr>
                           <tr>
@@ -169,20 +183,6 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.entity.EntityManager.java">com/modthemod/api/entity/EntityManager.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  12
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.base.Instantiator.java">com/modthemod/api/base/Instantiator.java</a>
                 </td>
                 <td>
@@ -193,6 +193,20 @@
                 </td>
                 <td>
                   10
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.entity.EntityManager.java">com/modthemod/api/entity/EntityManager.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  12
                 </td>
               </tr>
                           <tr>
@@ -220,7 +234,7 @@
                   0
                 </td>
                 <td>
-                  25
+                  33
                 </td>
               </tr>
                           <tr>
