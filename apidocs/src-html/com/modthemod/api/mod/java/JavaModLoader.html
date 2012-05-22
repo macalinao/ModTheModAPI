@@ -37,15 +37,19 @@
 <FONT color="green">034</FONT>    <a name="line.34"></a>
 <FONT color="green">035</FONT>            @Override<a name="line.35"></a>
 <FONT color="green">036</FONT>            public void enableMod(JavaMod mod) {<a name="line.36"></a>
-<FONT color="green">037</FONT>                    mod.onEnable();<a name="line.37"></a>
-<FONT color="green">038</FONT>            }<a name="line.38"></a>
-<FONT color="green">039</FONT>    <a name="line.39"></a>
-<FONT color="green">040</FONT>            @Override<a name="line.40"></a>
-<FONT color="green">041</FONT>            public void disableMod(JavaMod mod) {<a name="line.41"></a>
-<FONT color="green">042</FONT>                    mod.onDisable();<a name="line.42"></a>
-<FONT color="green">043</FONT>            }<a name="line.43"></a>
-<FONT color="green">044</FONT>    <a name="line.44"></a>
-<FONT color="green">045</FONT>    }<a name="line.45"></a>
+<FONT color="green">037</FONT>                    if (!mod.isEnabled()) {<a name="line.37"></a>
+<FONT color="green">038</FONT>                            mod.setEnabled(true);<a name="line.38"></a>
+<FONT color="green">039</FONT>                    }<a name="line.39"></a>
+<FONT color="green">040</FONT>            }<a name="line.40"></a>
+<FONT color="green">041</FONT>    <a name="line.41"></a>
+<FONT color="green">042</FONT>            @Override<a name="line.42"></a>
+<FONT color="green">043</FONT>            public void disableMod(JavaMod mod) {<a name="line.43"></a>
+<FONT color="green">044</FONT>                    if (mod.isEnabled()) {<a name="line.44"></a>
+<FONT color="green">045</FONT>                            mod.setEnabled(false);<a name="line.45"></a>
+<FONT color="green">046</FONT>                    }<a name="line.46"></a>
+<FONT color="green">047</FONT>            }<a name="line.47"></a>
+<FONT color="green">048</FONT>    <a name="line.48"></a>
+<FONT color="green">049</FONT>    }<a name="line.49"></a>
 
 
 
