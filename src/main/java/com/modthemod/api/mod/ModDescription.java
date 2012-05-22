@@ -136,6 +136,12 @@ public class ModDescription {
 		return engineVersion;
 	}
 
+	public static ModDescription loadFromJson(String json) {
+		ModDescription description = new ModDescription();
+		// TODO
+		return description;
+	}
+
 	/**
 	 * Represents a contributor to the mod.
 	 */
