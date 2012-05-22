@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2012-05-22T02:28:05.160">
-<file name="/home/simplyianm/Desktop/modthemod/modthemodapi/src/main/java/com/modthemod/api/mod/ModDescription.java">
-<violation beginline="157" endline="157" begincolumn="38" endcolumn="42" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.modthemod.api.mod" class="ModDescription$Contributor" variable="email" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
-Avoid unused private fields such as 'email'.
-</violation>
-</file>
+<pmd version="4.2.5" timestamp="2012-05-22T13:50:35.482">
 <file name="/home/simplyianm/Desktop/modthemod/modthemodapi/src/main/java/com/modthemod/api/property/TypeManager.java">
 <violation beginline="4" endline="4" begincolumn="1" endcolumn="33" rule="UnusedImports" ruleset="Import Statement Rules" package="com.modthemod.api.property" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
 Avoid unused imports such as 'com.modthemod.api.mod.Mod'
