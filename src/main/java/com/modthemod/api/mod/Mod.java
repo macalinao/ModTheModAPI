@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 /**
  * Represents a mod.
  */
-public interface Mod {
+public interface Mod<T extends Mod<T>> {
 	/**
 	 * Gets the name of this {@link Mod}.
 	 * 
@@ -48,4 +48,11 @@ public interface Mod {
 	 * Called when the mod is disabled.
 	 */
 	public void onDisable();
+
+	/**
+	 * Gets the {@link ModLoader} that loaded this mod.
+	 * 
+	 * @return The {@link ModLoader} that loaded this mod.
+	 */
+	public ModLoader<T> getModLoader();
 }

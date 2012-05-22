@@ -9,7 +9,7 @@ import com.modthemod.api.mod.ModLogger;
 /**
  * A Java mod.
  */
-public class JavaMod implements Mod {
+public class JavaMod implements Mod<JavaMod> {
 	private JavaModLoader loader;
 
 	private boolean enabled = false;
@@ -55,6 +55,11 @@ public class JavaMod implements Mod {
 		return enabled;
 	}
 
+	@Override
+	public JavaModLoader getModLoader() {
+		return loader;
+	}
+
 	/**
 	 * Sets this plugin's enabled status.
 	 * 
@@ -70,10 +75,6 @@ public class JavaMod implements Mod {
 				onDisable();
 			}
 		}
-	}
-
-	public JavaModLoader getModLoader() {
-		return loader;
 	}
 
 	/**

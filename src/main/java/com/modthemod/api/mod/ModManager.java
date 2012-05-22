@@ -12,14 +12,14 @@ public interface ModManager {
 	 * @param name
 	 * @return
 	 */
-	public Mod getMod(String name);
+	public Mod<?> getMod(String name);
 
 	/**
-	 * Gets a set of all loaded mods.
+	 * Gets a set of all loaded mods. Excludes loaders.
 	 * 
-	 * @return
+	 * @return A set of all loaded mods.
 	 */
-	public Set<Mod> getMods();
+	public Set<Mod<?>> getMods();
 
 	/**
 	 * Registers a {@link ModLoader} with the {@link ModManager}.

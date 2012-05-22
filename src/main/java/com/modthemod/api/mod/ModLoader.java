@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 /**
  * Represents an interface to load {@link Mod}s.
  */
-public interface ModLoader<T extends Mod> {
+public interface ModLoader<T extends Mod<T>> {
 	/**
 	 * Gets the language of the mods loaded by this {@link ModLoader}.
 	 * 

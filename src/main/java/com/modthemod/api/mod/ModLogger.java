@@ -17,7 +17,7 @@ public class ModLogger extends Logger {
 	 * 
 	 * @param context
 	 */
-	public ModLogger(Mod context) {
+	public ModLogger(Mod<?> context) {
 		super(context.getName(), null);
 		prefix = context.getName();
 
