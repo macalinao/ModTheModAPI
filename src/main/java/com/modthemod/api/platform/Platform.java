@@ -27,4 +27,11 @@ public interface Platform {
 	 * @return The {@link Logger} of the platform.
 	 */
 	public Logger getLogger();
+
+	/**
+	 * Gets the {@link FileHierarchy} of the platform.
+	 * 
+	 * @return The {@link FileHierarchy} of the platform.
+	 */
+	public FileHierarchy getFileHierarchy();
 }
