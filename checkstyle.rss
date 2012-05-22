@@ -8,8 +8,8 @@
     <language>en-us</language>
     <copyright>&#169;2012</copyright>
     <item>
-      <title>File: 30,
-             Errors: 1507,
+      <title>File: 29,
+             Errors: 1505,
              Warnings: 0,
              Infos: 0
       </title>
@@ -183,20 +183,6 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.base.Instantiator.java">com/modthemod/api/base/Instantiator.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  10
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.entity.EntityManager.java">com/modthemod/api/entity/EntityManager.java</a>
                 </td>
                 <td>
@@ -207,6 +193,20 @@
                 </td>
                 <td>
                   12
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.base.Instantiator.java">com/modthemod/api/base/Instantiator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  10
                 </td>
               </tr>
                           <tr>
@@ -290,7 +290,7 @@
                   0
                 </td>
                 <td>
-                  63
+                  62
                 </td>
               </tr>
                           <tr>
@@ -360,21 +360,7 @@
                   0
                 </td>
                 <td>
-                  24
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.api.mod.ModLoadOrder.java">com/modthemod/api/mod/ModLoadOrder.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  16
+                  39
                 </td>
               </tr>
                           <tr>
