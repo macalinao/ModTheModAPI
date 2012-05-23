@@ -1,6 +1,11 @@
 package com.modthemod.api.mod;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import com.google.gson.Gson;
 
 /**
  * Contains the description for the mod.
@@ -27,9 +32,9 @@ public class ModDescription {
 	private String description;
 
 	/**
-	 * The {link Contributor}s to the mod.
+	 * The authors to the mod. These are not as important as the main author.
 	 */
-	private Contributor[] contributors;
+	private String[] authors;
 
 	/**
 	 * The main JS file of the mod.
@@ -62,10 +67,6 @@ public class ModDescription {
 	 */
 	private String engineVersion;
 
-	public static ModDescription load(File file) {
-		return null; // TODO
-	}
-
 	/**
 	 * @return the name
 	 */
@@ -95,10 +96,10 @@ public class ModDescription {
 	}
 
 	/**
-	 * @return the contributors
+	 * @return the authors
 	 */
-	public Contributor[] getContributors() {
-		return contributors;
+	public String[] getAuthors() {
+		return authors;
 	}
 
 	/**
@@ -136,43 +137,41 @@ public class ModDescription {
 		return engineVersion;
 	}
 
-	public static ModDescription loadFromJson(String json) {
-		ModDescription description = new ModDescription();
-		// TODO
-		return description;
+	/**
+	 * Loads a {@link ModDescription} from its file.
+	 * 
+	 * @param file
+	 *            The file.
+	 * @return The {@link ModDescription}
+	 * @throws IOException
+	 *             If the file isn't loaded correctly.
+	 */
+	public static ModDescription load(File file) throws IOException {
+		int ch;
+		StringBuilder json = new StringBuilder("");
+
+		FileInputStream fin = new FileInputStream(file);
+
+		while ((ch = fin.read()) != -1) {
+			json.append((char) ch);
+		}
+
+		fin.close();
+
+		return load(json.toString());
 	}
 
 	/**
-	 * Represents a contributor to the mod.
+	 * Loads a {@link ModDescription} from its JSON representation.
+	 * 
+	 * @param json
+	 *            The JSON representation.
+	 * @return The {@link ModDescription}.
 	 */
-	public class Contributor {
-		/**
-		 * The name of the contributor.
-		 */
-		private final String name;
+	public static ModDescription load(String json) {
+		ModDescription description = (new Gson()).fromJson(json,
+				ModDescription.class);
 
-		/**
-		 * The email of the contributor.
-		 */
-		private final String email;
-
-		public Contributor(String name, String email) {
-			this.name = name;
-			this.email = email;
-		}
-
-		/**
-		 * @return the name
-		 */
-		public String getName() {
-			return name;
-		}
-
-		/**
-		 * @return the email
-		 */
-		public String getEmail() {
-			return email;
-		}
+		return description;
 	}
 }

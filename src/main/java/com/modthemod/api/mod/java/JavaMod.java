@@ -1,5 +1,6 @@
 package com.modthemod.api.mod.java;
 
+import java.io.File;
 import java.util.logging.Logger;
 
 import com.modthemod.api.mod.Mod;
@@ -17,6 +18,8 @@ public class JavaMod implements Mod {
 	private Logger logger;
 
 	private boolean initialized = false;
+	
+	private File dataFolder;
 
 	/**
 	 * The description for the mod.
@@ -82,11 +85,12 @@ public class JavaMod implements Mod {
 	 * 
 	 * @param loader
 	 */
-	void initialize(ModDescription description, JavaModLoader loader) {
+	void initialize(File dataFolder, ModDescription description, JavaModLoader loader) {
 		if (initialized) {
 			throw new IllegalStateException("Mod already initialized!");
 		}
 
+		this.dataFolder = dataFolder;
 		this.description = description;
 		this.loader = loader;
 		this.logger = new ModLogger(this);

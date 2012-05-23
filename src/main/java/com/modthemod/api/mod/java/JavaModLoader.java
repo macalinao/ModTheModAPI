@@ -76,7 +76,7 @@ public class JavaModLoader implements ModLoader<JavaMod> {
 			Constructor<? extends JavaMod> constructor = mod.getConstructor();
 
 			result = constructor.newInstance();
-			result.initialize(desc, this);
+			result.initialize(dataFolder, desc, this);
 
 		} catch (Exception e) {
 			throw new InvalidModException(e);
@@ -86,7 +86,15 @@ public class JavaModLoader implements ModLoader<JavaMod> {
 		return result;
 	}
 
-	public ModDescription loadDescription(File file) throws InvalidModException {
+	/**
+	 * Loads the description of the given plugin file.
+	 * 
+	 * @param file
+	 * @return
+	 * @throws InvalidModException
+	 */
+	private ModDescription loadDescription(File file)
+			throws InvalidModException {
 		JarFile jar = null;
 		InputStream stream = null;
 		ModDescription desc = null;
