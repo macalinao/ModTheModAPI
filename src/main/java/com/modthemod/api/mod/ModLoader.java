@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 /**
  * Represents an interface to load {@link Mod}s.
  */
-public interface ModLoader<T extends Mod<T>> {
+public interface ModLoader<T extends Mod> {
 	/**
 	 * Gets the language of the mods loaded by this {@link ModLoader}.
 	 * 
@@ -49,7 +49,7 @@ public interface ModLoader<T extends Mod<T>> {
 	 * @param mod
 	 *            The {@link Mod} to enable.
 	 */
-	public void enableMod(Mod<T> mod);
+	public void enableMod(T mod);
 
 	/**
 	 * Disables the {@link Mod}.
@@ -57,5 +57,5 @@ public interface ModLoader<T extends Mod<T>> {
 	 * @param mod
 	 *            The {@link Mod} to disable.
 	 */
-	public void disableMod(Mod<T> mod);
+	public void disableMod(T mod);
 }

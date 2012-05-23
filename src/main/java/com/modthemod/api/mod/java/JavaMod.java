@@ -9,7 +9,7 @@ import com.modthemod.api.mod.ModLogger;
 /**
  * A Java mod.
  */
-public class JavaMod implements Mod<JavaMod> {
+public class JavaMod implements Mod {
 	private JavaModLoader loader;
 
 	private boolean enabled = false;
