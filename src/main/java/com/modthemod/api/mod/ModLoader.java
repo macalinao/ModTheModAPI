@@ -49,7 +49,7 @@ public interface ModLoader<T extends Mod<T>> {
 	 * @param mod
 	 *            The {@link Mod} to enable.
 	 */
-	public void enableMod(T mod);
+	public void enableMod(Mod<T> mod);
 
 	/**
 	 * Disables the {@link Mod}.
@@ -57,5 +57,5 @@ public interface ModLoader<T extends Mod<T>> {
 	 * @param mod
 	 *            The {@link Mod} to disable.
 	 */
-	public void disableMod(T mod);
+	public void disableMod(Mod<T> mod);
 }

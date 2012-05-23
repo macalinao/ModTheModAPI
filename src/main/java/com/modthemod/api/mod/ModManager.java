@@ -27,4 +27,20 @@ public interface ModManager {
 	 * @param loader
 	 */
 	public void registerModLoader(ModLoader<?> loader);
+
+	/**
+	 * Enables the given mod.
+	 * 
+	 * @param mod
+	 *            The mod to enable.
+	 */
+	public <T extends Mod<T>> void enableMod(Mod<T> mod);
+
+	/**
+	 * Disables the given mod.
+	 * 
+	 * @param mod
+	 *            The mod to disable.
+	 */
+	public <T extends Mod<T>> void disableMod(Mod<T> mod);
 }
