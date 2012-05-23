@@ -218,7 +218,7 @@
 						<configuration>
 							<artifactSet>
 								<includes>
-									<include>rhino:js</include>
+									<include>com.google.code.gson:gson</include>
 								</includes>
 							</artifactSet>
 						</configuration>
