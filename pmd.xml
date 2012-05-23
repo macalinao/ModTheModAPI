@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2012-05-22T20:28:59.435">
+<pmd version="4.2.5" timestamp="2012-05-22T22:28:02.730">
+<file name="/home/simplyianm/Desktop/modthemod/modthemodapi/src/main/java/com/modthemod/api/mod/java/JavaModLoader.java">
+<violation beginline="65" endline="65" begincolumn="22" endcolumn="31" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="com.modthemod.api.mod.java" class="JavaModLoader" method="loadMod" variable="dataFolder" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'dataFolder'.
+</violation>
+</file>
+<file name="/home/simplyianm/Desktop/modthemod/modthemodapi/src/main/java/com/modthemod/api/mod/java/ModClassLoader.java">
+<violation beginline="24" endline="26" begincolumn="19" endcolumn="9" rule="UselessOverridingMethod" ruleset="Basic Rules" package="com.modthemod.api.mod.java" class="ModClassLoader" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#UselessOverridingMethod" priority="3">
+Overriding method merely calls super
+</violation>
+</file>
 <file name="/home/simplyianm/Desktop/modthemod/modthemodapi/src/main/java/com/modthemod/api/property/TypeManager.java">
 <violation beginline="4" endline="4" begincolumn="1" endcolumn="33" rule="UnusedImports" ruleset="Import Statement Rules" package="com.modthemod.api.property" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
 Avoid unused imports such as 'com.modthemod.api.mod.Mod'
