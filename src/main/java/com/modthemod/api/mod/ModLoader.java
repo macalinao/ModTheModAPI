@@ -22,17 +22,7 @@ public interface ModLoader<T extends Mod> {
 	 *            The {@link File} to load.
 	 * @return The {@link Mod} loaded.
 	 */
-	public T loadMod(File file);
-
-	/**
-	 * Loads a {@link ModDescription} from its {@link File}.
-	 * 
-	 * @param file
-	 *            The {@link File} containing the {@link ModDescription}. (Read:
-	 *            mod.json)
-	 * @return The parsed {@link ModDescription}.
-	 */
-	public ModDescription loadDescription(File file);
+	public T loadMod(File file) throws InvalidModException;
 
 	/**
 	 * Gets a {@link List} of all file filters that match files of this
