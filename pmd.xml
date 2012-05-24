@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2012-05-23T20:07:54.002">
+<pmd version="4.2.5" timestamp="2012-05-23T20:10:44.055">
 <file name="/home/simplyianm/Desktop/modthemod/modthemodapi/src/main/java/com/modthemod/api/event/EventType.java">
 <violation beginline="6" endline="6" begincolumn="1" endcolumn="43" rule="UnusedImports" ruleset="Import Statement Rules" package="com.modthemod.api.event" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
 Avoid unused imports such as 'com.modthemod.api.property.Property'
