@@ -2,7 +2,6 @@ package com.modthemod.api.mod;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import com.google.gson.Gson;
