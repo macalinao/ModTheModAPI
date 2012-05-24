@@ -70,8 +70,7 @@ public final class EventType {
 	 *            The properties of the {@link Event}.
 	 * @return The created {@link Event}.
 	 */
-	public Event createEvent(Subject subject,
-			Map<String, Property<?>> properties) {
+	public Event createEvent(Subject subject, Map<String, Object> properties) {
 		return new Event(this, subject, properties); // TODO should this call
 														// the event?
 	}

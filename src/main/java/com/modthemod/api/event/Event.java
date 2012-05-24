@@ -21,7 +21,7 @@ public final class Event {
 	/**
 	 * The properties of the {@link Event}.
 	 */
-	private final Map<String, Property<?>> properties;
+	private final Map<String, Object> properties;
 
 	/**
 	 * Constructor.
@@ -33,9 +33,7 @@ public final class Event {
 	 * @param properties
 	 *            The properties of the event.
 	 */
-	public Event(EventType type, Subject subject,
-			Map<String, Property<?>> properties) {
-		super();
+	public Event(EventType type, Subject subject, Map<String, Object> properties) {
 		this.type = type;
 		this.subject = subject;
 		this.properties = properties;
@@ -66,7 +64,7 @@ public final class Event {
 	 *            The name of the {@link Property}.
 	 * @return The {@link Property}.
 	 */
-	public Property<?> getProperty(String name) {
+	public Object getProperty(String name) {
 		return properties.get(name);
 	}
 }

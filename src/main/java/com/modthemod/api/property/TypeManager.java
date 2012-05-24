@@ -1,7 +1,6 @@
 package com.modthemod.api.property;
 
 import com.modthemod.api.base.Base;
-import com.modthemod.api.mod.Mod;
 
 /**
  * Manages {@link Type}s.
