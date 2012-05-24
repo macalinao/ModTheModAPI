@@ -73,12 +73,11 @@
 <FONT color="green">070</FONT>             *            The properties of the {@link Event}.<a name="line.70"></a>
 <FONT color="green">071</FONT>             * @return The created {@link Event}.<a name="line.71"></a>
 <FONT color="green">072</FONT>             */<a name="line.72"></a>
-<FONT color="green">073</FONT>            public Event createEvent(Subject subject,<a name="line.73"></a>
-<FONT color="green">074</FONT>                            Map&lt;String, Property&lt;?&gt;&gt; properties) {<a name="line.74"></a>
-<FONT color="green">075</FONT>                    return new Event(this, subject, properties); // TODO should this call<a name="line.75"></a>
-<FONT color="green">076</FONT>                                                                                                                    // the event?<a name="line.76"></a>
-<FONT color="green">077</FONT>            }<a name="line.77"></a>
-<FONT color="green">078</FONT>    }<a name="line.78"></a>
+<FONT color="green">073</FONT>            public Event createEvent(Subject subject, Map&lt;String, Object&gt; properties) {<a name="line.73"></a>
+<FONT color="green">074</FONT>                    return new Event(this, subject, properties); // TODO should this call<a name="line.74"></a>
+<FONT color="green">075</FONT>                                                                                                                    // the event?<a name="line.75"></a>
+<FONT color="green">076</FONT>            }<a name="line.76"></a>
+<FONT color="green">077</FONT>    }<a name="line.77"></a>
 
 
 
