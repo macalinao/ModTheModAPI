@@ -40,4 +40,13 @@ public interface TypeManager {
 	 *            The {@link Base} to register.
 	 */
 	public void registerBase(Base base);
+
+	/**
+	 * Gets a {@link Base} from its name.
+	 * 
+	 * @param name
+	 *            The name of the {@link Base}.
+	 * @return The {@link Base} corresponding with the name.
+	 */
+	public Base getBase(String name);
 }

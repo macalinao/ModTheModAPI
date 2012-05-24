@@ -1,10 +1,12 @@
 package com.modthemod.api.base;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Map;
 
 import com.modthemod.api.ModTheMod;
 import com.modthemod.api.entity.Entity;
+import com.modthemod.api.entity.EntityInstantiationException;
 import com.modthemod.api.event.EventListener;
 import com.modthemod.api.event.EventType;
 import com.modthemod.api.mod.Mod;
@@ -53,6 +55,11 @@ public final class Base extends Type<Entity> implements Serializable, Cloneable 
 	private Instantiator instantiator;
 
 	/**
+	 * The {@link EntityFinder} that finds entities of this type.
+	 */
+	private EntityFinder entityFinder;
+
+	/**
 	 * Creates a new {@link Base}.
 	 * 
 	 * <p>
@@ -71,11 +78,13 @@ public final class Base extends Type<Entity> implements Serializable, Cloneable 
 	 *            The instantiator of the {@link Base}.
 	 */
 	Base(String name, Map<String, Property<?>> properties,
-			Map<String, Method> methods, Instantiator instantiator, Mod mod) {
+			Map<String, Method> methods, Instantiator instantiator,
+			EntityFinder entityFinder, Mod mod) {
 		this.name = name;
 		this.properties = properties;
 		this.methods = methods;
 		this.instantiator = instantiator;
+		this.entityFinder = entityFinder;
 		this.mod = mod;
 	}
 
@@ -141,12 +150,37 @@ public final class Base extends Type<Entity> implements Serializable, Cloneable 
 	}
 
 	/**
-	 * Gets the {@link Instantiator} of the {@link Base}.
+	 * Returns true if the {@link Entity}s are instantiatable.
 	 * 
-	 * @return The {@link Instantiator} of the {@link Base}.
+	 * @return True
 	 */
-	public Instantiator getInstantiator() {
-		return instantiator;
+	public boolean isInstantiatable() {
+		return instantiator != null;
+	}
+
+	/**
+	 * Instantiates a new {@link Entity} based on this {@link Base}.
+	 * 
+	 * @param args
+	 *            The arguments to instantiate the {@link Entity} with.
+	 * @return A new {@link Entity} derived from this {@link Base}.
+	 * @throws EntityInstantiationException
+	 *             If the entity was not able to be instantiated
+	 */
+	public Entity instantiate(Object... args)
+			throws EntityInstantiationException {
+		if (!isInstantiatable()) {
+			throw new EntityInstantiationException(
+					"Cannot instantiate entities of Base '" + getName() + "'!");
+		}
+
+		try {
+			return instantiator.instantiate(args);
+		} catch (Exception ex) {
+			throw new EntityInstantiationException(
+					"Could not instantiate an entity of Base '" + getName()
+							+ "'!", ex);
+		}
 	}
 
 	/**
@@ -159,27 +193,6 @@ public final class Base extends Type<Entity> implements Serializable, Cloneable 
 	}
 
 	/**
-	 * Instantiates a new {@link Entity} based on this {@link Base}.
-	 * 
-	 * @return A new {@link Entity} derived from this {@link Base}.
-	 */
-	public Entity instantiate() {
-		return instantiate(new Object());
-	}
-
-	/**
-	 * Instantiates a new {@link Entity} based on this {@link Base}.
-	 * 
-	 * @param args
-	 *            The arguments to instantiate the {@link Entity} with.
-	 * @return A new {@link Entity} derived from this {@link Base}.
-	 */
-	public Entity instantiate(Object... args) {
-		return ModTheMod.getGame().getEntityManager()
-				.instantiateEntity(this, args);
-	}
-
-	/**
 	 * Returns true if the {@link Base} is a child of the other {@link Base}.
 	 * 
 	 * @param other
@@ -188,6 +201,16 @@ public final class Base extends Type<Entity> implements Serializable, Cloneable 
 	 */
 	public boolean isChildOf(Base other) {
 		return false; // TODO
+	}
+
+	/**
+	 * Finds entities of this base.
+	 * 
+	 * @param query
+	 * @return
+	 */
+	public List<Entity> find(Map<String, Property<?>> query) {
+		return entityFinder.find(query);
 	}
 
 	@Override

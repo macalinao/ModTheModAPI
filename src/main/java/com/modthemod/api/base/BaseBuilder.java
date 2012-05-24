@@ -38,6 +38,11 @@ public final class BaseBuilder {
 	private final Map<String, Method> namespacedMethods = new HashMap<String, Method>();
 
 	/**
+	 * The finder that finds entities based on parameters.
+	 */
+	private EntityFinder entityFinder;
+
+	/**
 	 * The {@link Instantiator} of new entities.
 	 */
 	private Instantiator instantiator;
@@ -119,6 +124,18 @@ public final class BaseBuilder {
 	}
 
 	/**
+	 * Sets the {@link EntityFinder} of the base.
+	 * 
+	 * @param entityFinder
+	 *            The {@link EntityFinder} of the base.
+	 * @return this
+	 */
+	public BaseBuilder setEntityFinder(EntityFinder entityFinder) {
+		this.entityFinder = entityFinder;
+		return this;
+	}
+
+	/**
 	 * Adds a parent {@link Base} to the {@link BaseBuilder}.
 	 * 
 	 * @param parent
@@ -160,6 +177,6 @@ public final class BaseBuilder {
 		if (instantiator == null) {
 			throw new IllegalStateException("No instantiator set!");
 		}
-		return new Base(name, properties, methods, instantiator, mod);
+		return new Base(name, properties, methods, instantiator, entityFinder, mod);
 	}
 }
